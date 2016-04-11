@@ -14,7 +14,8 @@ class Consult extends Model
         'created_at',
         'updated_at'
     ];
-    
+
+    // Pegar dados se Cpf Existir no banco
 
     public function getCpf($data)
     {
@@ -22,6 +23,7 @@ class Consult extends Model
             ->select('*')
             ->where(['cpf' => $data])->get();
     }
+   //  Salva ou Atualiza os dados da consulta no Banco de Dados
 
     public function saveOrUpdate($data)
     {
@@ -34,10 +36,10 @@ class Consult extends Model
         };
     }
 
+    // se for maior que 6 meses faz uma nova consulta
+
     public function getMonths($data)
     {
-        // se for maior que 6 meses faz uma nova consulta
-
         $mostDate  = DB::table('consultations')
             ->select('*')
             ->where('cpf', '=', $data)
@@ -45,10 +47,10 @@ class Consult extends Model
             ->get();
     }
 
+    // pegar consulta se CPF existe na base dados
+
     public function getConsultDB($data)
     {
-        // pega consulta se CPF existe na base dados
-
         $earliestdate = DB::table('consultations')
             ->select('*')
             ->where(['cpf' => $data])->get();
@@ -58,6 +60,8 @@ class Consult extends Model
         }
     }
 
+  // Fazer uma nova consulta na api Assertiva e retorna json
+
     public function newConsultSimplesAssertiva($data)
     {
         $Assertiva     = ApiController::getAssertiva($data);
@@ -65,6 +69,8 @@ class Consult extends Model
         
         return $itemAssertiva;
     }
+
+    // Fazer uma nova consulta na api Serasa e retorna json
 
     public function newConsultSimplesSerasa($data)
     {

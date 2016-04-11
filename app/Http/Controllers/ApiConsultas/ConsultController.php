@@ -15,7 +15,7 @@ class ConsultController extends Controller implements ConsultInterface
     {
         $this->consult = $consult;
     }
-
+    
     public function getConsultSimplesPF($data)
     {
         if($this->consult->getMonths($data)) {
@@ -46,7 +46,7 @@ class ConsultController extends Controller implements ConsultInterface
                 return $result;
             }
         }
-        
+
     }
     
 }
