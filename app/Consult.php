@@ -14,19 +14,11 @@ class Consult extends Model
         'created_at',
         'updated_at'
     ];
-
-    public function monthsRule($data)
-    {
-        $mostDate  = DB::table('consultations')
-            ->select('*')
-            ->where('cpf', '=', $data)
-            ->having('updated_at', '<=' , new \DateTime('-6 months'))
-            ->get();
-    }
+    
 
     public function getCpf($data)
     {
-        $earliestdate = DB::table('consultations')
+        $earliestdate = DB::table('consultas')
             ->select('*')
             ->where(['cpf' => $data])->get();
     }
@@ -36,53 +28,33 @@ class Consult extends Model
         return function($result) use ($data) {
             if($this->getCpf($data)) {
                 $update  = Consult::update($result);
-                dd($update);
             } else {
                 $create  = Consult::create($result);
             }
         };
     }
 
-    public function getConsult($data)
+    public function getMonths($data)
     {
         // se for maior que 6 meses faz uma nova consulta
 
-        if ($mostDate  = DB::table('consultations')
+        $mostDate  = DB::table('consultations')
             ->select('*')
             ->where('cpf', '=', $data)
             ->having('updated_at', '<=' , new \DateTime('-6 months'))
-            ->get()) {
+            ->get();
+    }
 
-            $Assertiva      =    $this->newConsultSimplesAssertiva($data);
-            $Serasa         =    $this->newConsultSimplesSerasa($data);
-            $result         =    $this->crossingData($Assertiva, $Serasa);
-            $result = (array) $result;
+    public function getConsultDB($data)
+    {
+        // pega consulta se CPF existe na base dados
 
-            //$this->saveOrUpdate($data);
+        $earliestdate = DB::table('consultations')
+            ->select('*')
+            ->where(['cpf' => $data])->get();
 
-            return $result;
-
-        } else {
-
-            // se for menor  que 6 meses faz consulta no BD
-            // se cpf não existir, faz nova consulta
-
-            if($earliestdate = $this->getCpf($data)) {
-                return $earliestdate;
-            }
-
-            if($earliestdate == false){
-                $Assertiva      =    $this->newConsultSimplesAssertiva($data);
-                $Serasa         =    $this->newConsultSimplesSerasa($data);
-                $result         =    $this->dataProcessed($Assertiva, $Serasa);
-                $result = (array) $result;
-
-                dd('menor que 6');
-
-                //$data = $this->saveOrUpdate($result);
-
-                return $result;
-            }
+        if($earliestdate) {
+            return $earliestdate;
         }
     }
 
@@ -102,9 +74,9 @@ class Consult extends Model
         return $itemSerasa;
     }
 
-    // Métod que retorna o tratamento dos dados, envia para o processamento de validação
+    // Método que retorna o tratamento dos dados, envia para o processamento de validação
 
-    public function dataProcessingAssertiva(\stdClass $Assertiva)
+    public function dataProcessingAssertiva($Assertiva)
     {
         $Assertiva->name       = strtoupper($Assertiva->name);
         $Assertiva->profissao  = strtoupper($Assertiva->profissao);
@@ -132,23 +104,23 @@ class Consult extends Model
 
     // Método que retorna o Cruzamento das Informaçoes
 
-    public function crossingData(\stdClass $Serasa, \stdClass $Assertiva)
+    public function crossingData($Serasa, $Assertiva)
     {
-        if($Serasa->cpf != $Assertiva->cpf) {
-            $cpf         = $Assertiva->cpf . ": 'Uma inconsistência no cpf foi encontrada'";
+        if($Serasa->cpf  != $Assertiva->cpf) {
+            $cpf          = $Assertiva->cpf . ": 'Uma inconsistência no cpf foi encontrada'";
         } else {
-            $cpf         = $Assertiva->cpf;
+            $cpf          = $Assertiva->cpf;
         }
         if($Serasa->name != $Assertiva->name) {
             $name         = $Assertiva->name . ": 'Uma inconsistência no nome foi encontrada'";
         } else {
             $name         = $Assertiva->name;
         }
+        $result = new Consult();
+        $result->cpf       = $cpf;
+        $result->name      = $name;
 
-        $this->cpf       = $cpf;
-        $this->name      = $name;
-
-        return $this;
+        return $result;
     }
 
     // Método que retorna os dados Processados
@@ -156,7 +128,6 @@ class Consult extends Model
     public function dataProcessed($Serasa, $Assertiva)
     {
         $Assertiva     = $this->dataProcessingAssertiva($Assertiva);
-        $Serasa        = $this->dataProcessingSerasa($Serasa);
         $Serasa        = $this->dataProcessingSerasa($Serasa);
         $data          = $this->crossingData($Assertiva, $Serasa);
 

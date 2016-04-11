@@ -18,9 +18,35 @@ class ConsultController extends Controller implements ConsultInterface
 
     public function getConsultSimplesPF($data)
     {
-        $data = $this->consult->getConsult($data);
+        if($this->consult->getMonths($data)) {
+            
+            $assertiva = $this->consult->newConsultSimplesAssertiva($data);
+            $serasa    = $this->consult->newConsultSimplesSerasa($data);
+            $result    = $this->consult->dataProcessed($assertiva, $serasa);
+            $result    = (array) $result;
 
-        return $data;
+            $this->consult->saveOrUpdate($data);
+            
+            return $result;
 
+        } else {
+
+            if($data   = $this->consult->getConsultDB($data)) {
+                return $data;
+
+        } else{
+
+            $assertiva = $this->consult->newConsultSimplesAssertiva($data);
+            $serasa    = $this->consult->newConsultSimplesSerasa($data);
+            $result    = $this->consult->dataProcessed($assertiva, $serasa);
+            $result    = (array) $result;
+
+            $this->consult->saveOrUpdate($data);
+                
+                return $result;
+            }
+        }
+        
     }
+    
 }
