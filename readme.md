@@ -1,4 +1,4 @@
-# Laravel PHP Framework
+## ApiSystem v1.0
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
@@ -6,22 +6,26 @@
 [![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Projeto API Elomilhas desenvolvido com laravel 5.2.x
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+# Documentação Oficial
 
-## Official Documentation
+http://docs.buscaaereo.com.br
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+## Instalação
+1. Necessário [Git](https://git-scm.com/downloads) e [Composer](https://getcomposer.org/download/) instalados;
+2. Execute “ git clone https://seu-usuario@bitbucket.org/Elomilhas_/busca-a-reo-2016-laravel-5.2.git ”
+3. Execute “ chmod 777 -R storage bootstrap/cache ”
+4. Execute “ composer install --no-scripts ” (Este comando pode levar vários minutos)
+5. Configure o banco de dados e emails, execute:
+6. Execute o comando “ php -r "copy('.env.default', '.env');" ” 
+7. Execute comando “ php artisan key:generate ”
 
-## Contributing
+# API Crédito
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+## Processo de Negócio "BPMN"
+![BPM_API_Análise_de_crédito.png](https://bitbucket.org/repo/Mpyaq5/images/4080196166-BPM_API_An%C3%A1lise_de_cr%C3%A9dito.png)
 
-## Security Vulnerabilities
+## Diagrama "Caso de Uso" 
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+![teste.png](https://bitbucket.org/repo/Mpyaq5/images/1347075238-teste.png)
