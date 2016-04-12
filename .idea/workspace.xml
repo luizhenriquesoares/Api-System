@@ -2,35 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7418799d-4b8e-4fa9-8c68-e5ee680f39ac" name="Default" comment="">
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Consult.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Controllers/ApiConsultas/ApiController.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Controllers/ApiConsultas/ConsultController.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Controllers/ApiConsultas/Interfaces/ApiInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Controllers/ApiConsultas/Interfaces/ConsultInterface.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Controllers/ApiConsultas/ServiceContainerController.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Controllers/ApiConsultas/Traits/ApiTrait.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Controllers/Auth/AuthController.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Controllers/Auth/PasswordController.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Controllers/Controller.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Controllers/Exception/APIException.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Controllers/FrontController.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Kernel.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Middleware/Authenticate.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Middleware/Cors.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Middleware/EncryptCookies.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Middleware/RedirectIfAuthenticated.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Middleware/VerifyCsrfToken.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Requests/CreateRequestApi.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/Requests/Request.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/Http/routes.php" afterPath="" />
-      <change type="DELETED" beforePath="/var/www/dev-luiz/ApiConsultas/app/User.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="/var/www/dev-luiz/ApiConsultas/.idea/workspace.xml" afterPath="/var/www/dev-luiz/ApiConsultas/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="/var/www/dev-luiz/ApiConsultas/app/Providers/AppServiceProvider.php" afterPath="/var/www/dev-luiz/ApiConsultas/app/Providers/AppServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="/var/www/dev-luiz/ApiConsultas/app/Providers/RouteServiceProvider.php" afterPath="/var/www/dev-luiz/ApiConsultas/app/Providers/RouteServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="/var/www/dev-luiz/ApiConsultas/bootstrap/app.php" afterPath="/var/www/dev-luiz/ApiConsultas/bootstrap/app.php" />
-      <change type="MODIFICATION" beforePath="/var/www/dev-luiz/ApiConsultas/composer.json" afterPath="/var/www/dev-luiz/ApiConsultas/composer.json" />
-      <change type="MODIFICATION" beforePath="/var/www/dev-luiz/ApiConsultas/composer.lock" afterPath="/var/www/dev-luiz/ApiConsultas/composer.lock" />
-      <change type="MODIFICATION" beforePath="/var/www/dev-luiz/ApiConsultas/config/app.php" afterPath="/var/www/dev-luiz/ApiConsultas/config/app.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ApiConsultas.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,31 +27,31 @@
     <leaf />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="/var/www/dev-luiz/ApiConsultas" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Credit/Http/Controllers/ApiConsultas/Interfaces/ApiInterface.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Credit/Http/Controllers/ApiConsultas/Interfaces/ConsultInterface.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Credit/Http/Controllers/ApiConsultas/Traits/ApiTrait.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Models/Consult.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Credit/Http/Middleware/Cors.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Credit/Http/Kernel.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Credit/Kernel.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/bootstrap/app.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Credit/Http/Controllers/Controller.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Credit/Http/Controllers/ApiConsultas/ConsultController.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Providers/AppServiceProvider.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Models/User.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Credit/Http/Requests/CreateRequestApi.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Credit/Http/Controllers/Auth/PasswordController.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Credit/Http/Controllers/Auth/AuthController.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/composer.json" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Credit/Http/Controllers/FrontController.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Credit/routes.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Credit/Http/Controllers/ApiConsultas/ApiController.php" />
-        <option value="/var/www/dev-luiz/ApiConsultas/app/Modules/Credit/Http/Controllers/ApiConsultas/ServiceContainerController.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Credit/Http/Controllers/ApiConsultas/Interfaces/ApiInterface.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Credit/Http/Controllers/ApiConsultas/Interfaces/ConsultInterface.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Credit/Http/Controllers/ApiConsultas/Traits/ApiTrait.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Models/Consult.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Credit/Http/Middleware/Cors.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Credit/Http/Kernel.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Credit/Kernel.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/bootstrap/app.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Credit/Http/Controllers/Controller.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Credit/Http/Controllers/ApiConsultas/ConsultController.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Providers/AppServiceProvider.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Models/User.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Credit/Http/Requests/CreateRequestApi.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Credit/Http/Controllers/Auth/PasswordController.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Credit/Http/Controllers/Auth/AuthController.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/composer.json" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Credit/Http/Controllers/FrontController.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Credit/routes.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Credit/Http/Controllers/ApiConsultas/ApiController.php" />
+        <option value="$PROJECT_DIR$/../ApiConsultas/app/Modules/Credit/Http/Controllers/ApiConsultas/ServiceContainerController.php" />
       </list>
     </option>
   </component>
@@ -86,11 +59,6 @@
   <component name="JsBuildToolPackageJson" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
-    <gulpfiles>
-      <GulpfileState>
-        <gulpfile-path>/var/www/dev-luiz/ApiSystem/gulpfile.js</gulpfile-path>
-      </GulpfileState>
-    </gulpfiles>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -124,26 +92,31 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ApiConsultas" />
+              <option name="myItemId" value="APISystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="APISystem" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ApiSystem" />
+              <option name="myItemId" value="APISystem" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ApiConsultas" />
+              <option name="myItemId" value="APISystem" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ApiSystem" />
+              <option name="myItemId" value="APISystem" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -151,8 +124,75 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="APISystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="APISystem" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="APISystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="APISystem" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Credit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="APISystem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="APISystem" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Modules" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Credit" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Http" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -160,12 +200,12 @@
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="/var/www/dev-luiz/buscaaereo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../buscaaereo" />
     <property name="SearchEverywhereHistoryKey" value="ApiController&#9;FILE&#9;file:///var/www/dev-luiz/ApiConsultas/app/Modules/Credit/Http/Controllers/ApiConsultas/ApiController.php" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="/var/www/dev-luiz/ApiConsultas/app/Modules/Credit" />
+      <recent name="$PROJECT_DIR$/../ApiConsultas/app/Modules/Credit" />
     </key>
   </component>
   <component name="RunManager">
@@ -184,6 +224,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -209,22 +255,21 @@
       <updated>1460465359319</updated>
       <workItem from="1460465362070" duration="14000" />
       <workItem from="1460467208221" duration="3659000" />
+      <workItem from="1460472821441" duration="882000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3673000" />
+    <option name="totallyTimeSpent" value="4555000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
+    <frame x="65" y="-4" width="1855" height="1084" extended-state="7" />
     <editor active="false" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19299191" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -234,7 +279,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -249,323 +296,43 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/Http/Controllers/ApiConsultas/Interfaces/ApiInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/Http/Controllers/ApiConsultas/Traits/ApiTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="e#75#155#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/vendor/laravel/framework/src/Illuminate/Foundation/Auth/Access/AuthorizesRequests.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/Http/Controllers/ApiConsultas/Interfaces/ConsultInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/bootstrap/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/bootstrap/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/bootstrap/cache/services.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-594">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/bootstrap/cache/compiled.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Providers/AppServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="49" selection-start-line="25" selection-start-column="49" selection-end-line="25" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Providers/AuthServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Providers/EventServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Providers/RouteServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-54">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Policies/UserPolicy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Policies/RolePolicy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Policies/AbstractUserPolicy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-46">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Models/Consult.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="28" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="28" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Helpers/Helper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/Http/Controllers/Auth/PasswordController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="50" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/Http/Controllers/Auth/AuthController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="38" column="38" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/Http/Controllers/Exception/APIException.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/Http/Controllers/ApiConsultas/ConsultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding>
-            <element signature="e#69#100#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/Http/Controllers/FrontController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/Http/Controllers/Controller.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding>
-            <element signature="e#55#100#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/Kernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="602">
-          <caret line="42" column="71" selection-start-line="42" selection-start-column="14" selection-end-line="42" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/Http/Requests/CreateRequestApi.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/AbstractModulesModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/AbstractModulesPolicy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/ModulesServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-604">
-          <caret line="40" column="83" selection-start-line="40" selection-start-column="76" selection-end-line="40" selection-end-column="83" />
-          <folding>
-            <element signature="e#123#156#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/Http/Controllers/ApiConsultas/ApiController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="72" selection-start-line="21" selection-start-column="72" selection-end-line="21" selection-end-column="72" />
-          <folding>
-            <element signature="e#68#145#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/Http/Controllers/ApiConsultas/ServiceContainerController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="e#70#92#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/AbstractModulesFormRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/AbstractModulesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="15" column="33" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/Http/Middleware/Authenticate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#39#51#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/Http/Middleware/Cors.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///var/www/dev-luiz/ApiSystem/app/Modules/Credit/Http/Requests/Request.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/Http/Controllers/ApiConsultas/Interfaces/ApiInterface.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/Http/Controllers/ApiConsultas/Traits/ApiTrait.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/vendor/laravel/framework/src/Illuminate/Foundation/Auth/Access/AuthorizesRequests.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/Http/Controllers/ApiConsultas/Interfaces/ConsultInterface.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/bootstrap/app.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/bootstrap/autoload.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/bootstrap/cache/services.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/bootstrap/cache/compiled.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Providers/AppServiceProvider.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Providers/AuthServiceProvider.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Providers/EventServiceProvider.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Providers/RouteServiceProvider.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Policies/UserPolicy.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Policies/RolePolicy.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Policies/AbstractUserPolicy.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Models/Consult.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Models/User.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Helpers/Helper.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/Http/Controllers/Auth/PasswordController.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/Http/Controllers/Auth/AuthController.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/composer.json" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/Http/Controllers/Exception/APIException.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/Http/Controllers/ApiConsultas/ConsultController.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/Http/Controllers/FrontController.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/Http/Controllers/Controller.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/routes.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/Kernel.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/Http/Requests/CreateRequestApi.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/AbstractModulesModel.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/AbstractModulesPolicy.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/ModulesServiceProvider.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/Http/Controllers/ApiConsultas/ApiController.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/Http/Controllers/ApiConsultas/ServiceContainerController.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/AbstractModulesFormRequest.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/AbstractModulesController.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/Http/Middleware/Authenticate.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/Http/Middleware/Cors.php" />
+    <entry file="file://$PROJECT_DIR$/../ApiSystem/app/Modules/Credit/Http/Requests/Request.php" />
   </component>
 </project>
