@@ -2,7 +2,6 @@
 
 namespace App\Modules\Credit\Http\Controllers;
 
-
 use App\Modules\Credit\Http\Controllers\ApiConsultas\Interfaces\ConsultInterface;
 use App\Modules\Models\Consult;
 use Illuminate\Http\Request;
@@ -20,7 +19,6 @@ class FrontController extends Controller implements ConsultInterface
     public function simplesPF($data)
     {
         if($this->consult->getMonths($data)) {
-
             $assertiva = $this->consult->newConsultSimplesAssertiva($data);
             $serasa    = $this->consult->newConsultSimplesSerasa($data);
             $result    = $this->consult->dataProcessed($assertiva, $serasa);
@@ -31,8 +29,8 @@ class FrontController extends Controller implements ConsultInterface
             return response()->json($result);
 
         } else {
-
-            if($data   = $this->consult->getConsultDB($data)) {
+     ''
+            if($data = $this->consult->getConsultDB($data)) {
                 return response()->json($data);
             } else{
                 $assertiva = $this->consult->newConsultSimplesAssertiva($data);

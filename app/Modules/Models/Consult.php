@@ -46,6 +46,8 @@ class Consult extends Model
             ->where('cpf', '=', $data)
             ->having('updated_at', '<=' , new \DateTime('-6 months'))
             ->get();
+
+        return $mostDate;
     }
 
     // pegar consulta se CPF existe na base dados
@@ -67,7 +69,7 @@ class Consult extends Model
     {
         $Assertiva     = ApiController::getAssertiva($data);
         $itemAssertiva = json_decode($Assertiva);
-        
+ 
         return $itemAssertiva;
     }
 
