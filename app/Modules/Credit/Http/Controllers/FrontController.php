@@ -3,24 +3,50 @@
 namespace App\Modules\Credit\Http\Controllers;
 
 
+use App\Modules\Credit\Http\Controllers\ApiConsultas\Interfaces\ConsultInterface;
 use App\Modules\Models\Consult;
-use App\Modules\Credit\Http\Controllers\ApiConsultas\ConsultController;
 use Illuminate\Http\Request;
 
-class FrontController extends Controller
+
+class FrontController extends Controller implements ConsultInterface
 {
-    private $validate;
+    private $consult;
 
-
-    public function index(ConsultController $validate, $param)
+    public function __construct(Consult $consult)
     {
-        $this->validate = $validate;
-        $data = $this->validate->getConsultSimplesPF($param);
-        $this->data = $data;
-
-        return response()->json($data);
+        $this->consult = $consult;
     }
 
+    public function simplesPF($data)
+    {
+        if($this->consult->getMonths($data)) {
+
+            $assertiva = $this->consult->newConsultSimplesAssertiva($data);
+            $serasa    = $this->consult->newConsultSimplesSerasa($data);
+            $result    = $this->consult->dataProcessed($assertiva, $serasa);
+            $result    = (array) $result;
+
+            $this->consult->saveOrUpdate($data);
+
+            return response()->json($result);
+
+        } else {
+
+            if($data   = $this->consult->getConsultDB($data)) {
+                return response()->json($data);
+            } else{
+                $assertiva = $this->consult->newConsultSimplesAssertiva($data);
+                $serasa    = $this->consult->newConsultSimplesSerasa($data);
+                $result    = $this->consult->dataProcessed($assertiva, $serasa);
+                $result    = (array) $result;
+
+                $this->consult->saveOrUpdate($data);
+
+                return response()->json($result);
+            }
+        }
+
+    }
     public function store(Request $request)
     {
         $data = Consult::create($request->all());
@@ -29,3 +55,5 @@ class FrontController extends Controller
     }
 
 }
+
+
