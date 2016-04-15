@@ -142,4 +142,34 @@ class Consult extends Model
 
         return $data;
     }
+
+
+    public function dataProcessingSimpleQuery($data)
+    {
+        $consultAssertiva     = $this->newConsultSimplesAssertiva($data);
+        $consultSerasa        = $this->newConsultSimplesSerasa($data);
+        $dataAssertiva        = $this->dataProcessingAssertiva($consultAssertiva);
+        $dataSerasa           = $this->dataProcessingSerasa($consultSerasa);
+        $data                 = $this->crossingData($dataAssertiva, $dataSerasa);
+        // $result    = (array) $data;
+        return $data;
+    }
+    public function dataprocessedSimpleQuery($data)
+    {
+        if ($this->getMonths($data)) {
+            $result = $this->dataProcessingSimpleQuery($data);
+            $this->saveOrUpdate($data);
+            return response()->json($result);
+        } else {
+            if ($data = $this->getConsultDB($data)) {
+                return response()->json($data);
+            } else {
+                $result = $this->dataProcessingSimpleQuery($data);
+                $this->saveOrUpdate($data);
+                return response()->json($result);
+            }
+        }
+    }
+
+    
 }

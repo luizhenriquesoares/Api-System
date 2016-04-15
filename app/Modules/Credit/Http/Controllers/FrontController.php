@@ -18,32 +18,8 @@ class FrontController extends Controller implements ConsultInterface
 
     public function simplesPF($data)
     {
-        if($this->consult->getMonths($data)) {
-            $assertiva = $this->consult->newConsultSimplesAssertiva($data);
-            $serasa    = $this->consult->newConsultSimplesSerasa($data);
-            $result    = $this->consult->dataProcessed($assertiva, $serasa);
-            $result    = (array) $result;
-
-            $this->consult->saveOrUpdate($data);
-
-            return response()->json($result);
-
-        } else {
-
-            if($data = $this->consult->getConsultDB($data)) {
-                return response()->json($data);
-            } else{
-                $assertiva = $this->consult->newConsultSimplesAssertiva($data);
-                $serasa    = $this->consult->newConsultSimplesSerasa($data);
-                $result    = $this->consult->dataProcessed($assertiva, $serasa);
-                $result    = (array) $result;
-
-                $this->consult->saveOrUpdate($data);
-
-                return response()->json($result);
-            }
-        }
-
+        $data = $this->consult->dataprocessedSimpleQuery($data);
+        return $data;
     }
     public function store(Request $request)
     {
@@ -53,5 +29,3 @@ class FrontController extends Controller implements ConsultInterface
     }
 
 }
-
-
