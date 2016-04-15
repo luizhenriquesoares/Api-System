@@ -21,7 +21,7 @@ http://docs.buscaaereo.com.br
 6. Execute o comando “ php -r "copy('.env.default', '.env');" ” 
 7. Execute comando “ php artisan key:generate ”
 
-# API Crédito
+# API Cadastro
 
 ## Processo de Negócio "BPMN"
 ![BPM_API_Análise_de_crédito.png](https://bitbucket.org/repo/Mpyaq5/images/4080196166-BPM_API_An%C3%A1lise_de_cr%C3%A9dito.png)
