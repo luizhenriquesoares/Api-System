@@ -14,7 +14,7 @@ http://docs.buscaaereo.com.br
 
 ## Instalação
 1. Necessário [Git](https://git-scm.com/downloads) e [Composer](https://getcomposer.org/download/) instalados;
-2. Execute “ git clone https://seu-usuario@bitbucket.org/Elomilhas_/busca-a-reo-2016-laravel-5.2.git ”
+2. Execute “ git clone https://seu-usuario@bitbucket.org/elomilhasti/elomilhas-api.git ”
 3. Execute “ chmod 777 -R storage bootstrap/cache ”
 4. Execute “ composer install --no-scripts ” (Este comando pode levar vários minutos)
 5. Configure o banco de dados e emails, execute:
