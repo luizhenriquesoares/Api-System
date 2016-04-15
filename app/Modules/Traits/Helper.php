@@ -10,7 +10,6 @@ namespace App\Modules\Traits;
 
 
 use App\Modules\Composers\ComposeShare;
-use App\Modules\Home\Http\Traits\Auth\UserData;
 
 /**
  * Class Helper
@@ -19,10 +18,6 @@ use App\Modules\Home\Http\Traits\Auth\UserData;
  */
 trait Helper
 {
-    /**
-     * @var UserData
-     */
-    use UserData;
 
     /**
      * Carrega as configurações do projeto

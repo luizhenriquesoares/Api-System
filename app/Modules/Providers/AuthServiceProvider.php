@@ -26,19 +26,19 @@ class AuthServiceProvider extends AbstractUserPolicy
      * @var array $policies
      */
     protected $policies =   [
-                                User::class => UserPolicy::class,
-                                Role::class => RolePolicy::class
+                                User::class => UserPolicy::class,/*
+                                Role::class => RolePolicy::class*/
                             ];
 
     /**
      * @param GateContract $gate
      */
-    public function boot(GateContract $gate)
+    /*public function boot(GateContract $gate)
     {
         $this->registerPolicies($gate);
 
         $rules = ['store', 'update', 'show', 'trash', 'destroy'];
 
         $this->defineRules($gate, $rules);
-    }
+    }*/
 }

@@ -3,5 +3,5 @@
  * Lista de módulos
  */
 return  [
-            'module' => ['Credit']
+            'module' => ['ApiManager','Credit','CRM']
         ];

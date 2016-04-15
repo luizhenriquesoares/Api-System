@@ -24,7 +24,7 @@ class ModulesServiceProvider extends ServiceProvider
      * @var Traits\ProviderCoreMethods | Traits\Behaviors
      */
 
-    use ProviderCoreMethods, Behaviors;
+    use ProviderCoreMethods;
 
     /**
      * Register the service provider.
@@ -70,50 +70,8 @@ class ModulesServiceProvider extends ServiceProvider
                         $this->setFileConstants($module);
                 }
 
-                /** Quando uma pesquisa for realizada, o contador inicia */
-                $this->countSearchs();
-
-                /** Inicia logs de acordo com a configuração ativada no .env para LOGGING_MANAGER */
-                $this->logging($app);
             }
         });
     }
 
-    /**
-     * @param      $app
-     */
-    private function logging($app)
-    {
-        /** @var boolean $isActive .env file */
-        $isActive = (boolean) env('LOGGING_MANAGER');
-
-        if($isActive)
-        {
-            if(method_exists($app, 'getModelController') && property_exists($app, 'model'))
-            {
-                /** @var AbstractModulesModel $model */
-                $model = $app->getModelController();
-
-                $model::created(function($model)
-                {
-                    \Auth::user()->authorizations()->create(['fk_id' => $model->id, 'table' => $model->getTable(), 'action' => 'store']);
-                });
-
-                $model::updated(function($model)
-                {
-                    \Auth::user()->authorizations()->create(['fk_id' => $model->id, 'table' => $model->getTable(), 'action' => 'update']);
-                });
-
-                $model::deleted(function($model)
-                {
-                    \Auth::user()->authorizations()->create(['fk_id' => $model->id, 'table' => $model->getTable(), 'action' => 'delete']);
-                });
-
-                $model::restored(function($model)
-                {
-                    \Auth::user()->authorizations()->create(['fk_id' => $model->id, 'table' => $model->getTable(), 'action' => 'restore']);
-                });
-            }
-        }
-    }
 }

@@ -29,7 +29,7 @@ class FrontController extends Controller implements ConsultInterface
             return response()->json($result);
 
         } else {
-     ''
+
             if($data = $this->consult->getConsultDB($data)) {
                 return response()->json($data);
             } else{
