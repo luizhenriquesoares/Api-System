@@ -8,11 +8,11 @@
         <div class="logo-box">
             <a href="/" class="logo-text"><span>Busca Aéreo</span></a>
         </div><!-- Logo Box -->
-        <div class="search-button">
+{{--        <div class="search-button">
             <a href="javascript:void(0);" class="waves-effect waves-button waves-classic show-search" target="_blank">
                 <span class="glyphicon glyphicon-plane"></span>
             </a>
-        </div>
+        </div>--}}
         <div class="topmenu-outer">
             <div class="top-menu">
                 <ul class="nav navbar-nav navbar-left">
@@ -104,9 +104,6 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/" class="waves-effect waves-button waves-classic"><span class="glyphicon glyphicon-plane"></span></a>
-                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle waves-effect waves-button waves-classic" data-toggle="dropdown"><i class="fa fa-envelope"></i><span class="badge badge-success pull-right">4</span></a>
                         <ul class="dropdown-menu title-caret dropdown-lg" role="menu">
@@ -218,7 +215,7 @@
                             <img class="img-circle avatar" src="{{ url(IMG_PATH . 'avatar1.png') }}" width="40" height="40" alt="">
                         </a>
                         <ul class="dropdown-menu dropdown-list" role="menu">
-                            <li role="presentation"><a href="{{ route('manager.user.edit', auth()->guard()->user()->id)}}"><i class="fa fa-user"></i>Seu Perfil</a></li>
+                            <li role="presentation"><a href="{{ route('user.edit', $user->id)}}"><i class="fa fa-user"></i>Seu Perfil</a></li>
                             <li role="presentation"><a href=""><i class="fa fa-calendar"></i>Calendário</a></li>
                             <li role="presentation"><a href="#"><i class="fa fa-envelope"></i>Inbox<span class="badge badge-success pull-right">4</span></a></li>
                             <li role="presentation" class="divider"></li>

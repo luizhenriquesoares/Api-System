@@ -2,8 +2,8 @@
 
 namespace App\Modules\ApiManager\Http\Controllers\Auth;
 
-use App\Modules\AbstractModulesController;
 use App\Modules\Models\User;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller;
 use Validator;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -12,22 +12,21 @@ use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 class AuthController extends Controller
 {
 
-    use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+    use AuthenticatesAndRegistersUsers, ThrottlesLogins, ValidatesRequests;
 
     /**
      * Where to redirect users after login / registration.
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/user';
 
     /**
      * Create a new authentication controller instance.
      */
     public function __construct()
     {
-//        $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
-        $this->middleware('guest', ['except' => 'getLogout']);
+        $this->middleware('guest', ['except' => 'logout']);
     }
 
     /**

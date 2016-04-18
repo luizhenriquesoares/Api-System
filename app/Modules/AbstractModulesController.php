@@ -14,6 +14,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 
 /**
  * Class AbstractModulesController
@@ -32,5 +34,8 @@ abstract class AbstractModulesController extends Controller implements DefaultAc
     public function __construct()
     {
         $this->init();
+
+        // Sharing is caring
+        View::share('user', Auth::guard()->user());
     }
 }

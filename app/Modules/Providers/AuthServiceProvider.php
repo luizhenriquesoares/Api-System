@@ -33,12 +33,13 @@ class AuthServiceProvider extends AbstractUserPolicy
     /**
      * @param GateContract $gate
      */
-    /*public function boot(GateContract $gate)
+    public function boot(GateContract $gate)
     {
-        $this->registerPolicies($gate);
+        /*$this->registerPolicies($gate);
 
         $rules = ['store', 'update', 'show', 'trash', 'destroy'];
 
-        $this->defineRules($gate, $rules);
-    }*/
+        $this->defineRules($gate, $rules);*/
+
+    }
 }

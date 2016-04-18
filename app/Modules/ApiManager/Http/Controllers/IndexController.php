@@ -10,6 +10,6 @@ class IndexController extends AbstractModulesController
      */
     public function index()
     {
-        return ['INDEX'];
+        return config("modules");
     }
 }

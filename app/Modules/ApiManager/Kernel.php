@@ -2,12 +2,7 @@
 
 namespace App\Modules\ApiManager;
 
-use App\Modules\ApiManager\Http\Middleware\Authenticate;
-use App\Modules\ApiManager\Http\Middleware\EncryptCookies;
-use App\Modules\ApiManager\Http\Middleware\RedirectIfAuthenticated;
-use App\Modules\ApiManager\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
-
 
 class Kernel extends HttpKernel
 {
@@ -28,12 +23,12 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middlewareGroups = [
-        'apiManager' => [
-            EncryptCookies::class,
+        'web' => [
+            \App\Modules\ApiManager\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            VerifyCsrfToken::class
+            \App\Modules\ApiManager\Http\Middleware\VerifyCsrfToken::class
         ],
         'validate' => [
             'throttle:120,1',
@@ -48,9 +43,10 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth.apiManager' => Authenticate::class,
-        'auth.apiManager.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest.apiManager' => RedirectIfAuthenticated::class,
+        'auth' => \App\Modules\ApiManager\Http\Middleware\Authenticate::class,
+        'auth.api' =>  \App\Modules\ApiManager\Http\Middleware\AuthenticateWithApiAuth::class,
+        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'guest' => \App\Modules\ApiManager\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class
     ];
 }

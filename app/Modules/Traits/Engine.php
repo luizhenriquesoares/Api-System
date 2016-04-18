@@ -8,6 +8,8 @@
 
 namespace App\Modules\Traits;
 
+use App\Modules\ApiManager\Http\Traits\Utils\FlashMessages;
+
 /**
  * Class Engine
  *
@@ -18,7 +20,7 @@ trait Engine
     /**
      * Traits
      */
-    use Attributes, Helper, GettersSetters;
+    use Attributes, Helper, GettersSetters, FlashMessages;
 
     /**
      * Initializing data information
@@ -47,6 +49,6 @@ trait Engine
          * Middleware de Autenticação
          */
 
-        $this->middleware('auth.apiManager');
+        $this->middleware('auth');
     }
 }

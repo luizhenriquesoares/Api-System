@@ -19,7 +19,7 @@ class User extends AbstractModulesModel implements \Illuminate\Contracts\Auth\Au
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password'
+        'name', 'email', 'password', 'active', 'api_token'
     ];
 
     /**
@@ -28,6 +28,11 @@ class User extends AbstractModulesModel implements \Illuminate\Contracts\Auth\Au
      * @var array
      */
     protected $hidden = [
-        'password', 'api_token', 'remember_token'
+        'password', 'remember_token'
     ];
+
+    public function newApiTokenAttribute()
+    {
+        return bcrypt($this->attributes['email']);
+    }
 }

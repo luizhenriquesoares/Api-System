@@ -8,7 +8,7 @@
                 <h4 class="panel-title">Usuários</h4>
             </div>
             <div class="panel-body">
-                <a href="{{--{{ route('manager.user.create') }}--}}" class="btn btn-success m-b-sm">Novo Usuário</a>
+                <a href="{{ route('user.create') }}" class="btn btn-success m-b-sm">Novo Usuário</a>
                 <div id="rootwizard">
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#user-tab1" data-toggle="tab"><i class="fa fa-user m-r-xs"></i>Todos</a></li>

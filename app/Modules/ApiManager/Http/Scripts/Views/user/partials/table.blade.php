@@ -3,31 +3,31 @@
     <tr>
         <th>Nome</th>
         <th>Email</th>
-        <th>Permissão</th>
+        {{--<th>Permissão</th>--}}
         <th>Criado</th>
         <th>Modificado</th>
         <th>Ação</th>
     </tr>
     </thead>
-    {{--<tbody>--}}
-    {{--@foreach($data as $item)--}}
-        {{--<tr>--}}
-            {{--<td>{{ $item->fullname }}</td>--}}
-            {{--<td>{{ $item->email }}</td>--}}
+    <tbody>
+    @foreach($data as $item)
+        <tr>
+            <td>{{ $item->name }}</td>
+            <td>{{ $item->email }}</td>
             {{--<td>{{ $item->roles->display_name }}</td>--}}
-            {{--<td>{{ Helper::formatDate($item->created_at, "Y-m-d") }}</td>--}}
-            {{--<td>{{ Helper::formatDate ($item->updated_at, "Y-m-d") }}</td>--}}
-            {{--<td>--}}
+            <td>{{ \App\Modules\Helpers\Helper::formatDate($item->created_at, "Y-m-d") }}</td>
+            <td>{{ \App\Modules\Helpers\Helper::formatDate ($item->updated_at, "Y-m-d") }}</td>
+            <td>
                 {{--@include($helper->base . 'partials.actions.default', [$item, 'properties' => $helper->properties])--}}
-            {{--</td>--}}
-        {{--</tr>--}}
-    {{--@endforeach--}}
-    {{--</tbody>--}}
+            </td>
+        </tr>
+    @endforeach
+    </tbody>
     <tfoot>
     <tr>
         <th>Nome</th>
         <th>Email</th>
-        <th>Permissão</th>
+        {{--<th>Permissão</th>--}}
         <th>Criado</th>
         <th>Modificado</th>
         <th>Ação</th>

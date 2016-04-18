@@ -9,6 +9,10 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return User::all();;
+//        $user = User::first();
+//        $user->password = bcrypt("123456");
+//        $user->api_token = bcrypt("123456");
+//        $user->save();
+        return User::all();
     }
 }
