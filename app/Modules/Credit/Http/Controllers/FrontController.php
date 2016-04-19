@@ -9,18 +9,34 @@ use Illuminate\Http\Request;
 
 class FrontController extends Controller implements ConsultInterface
 {
+    /**
+     * @var Consult
+     */
     private $consult;
 
+    /**
+     * FrontController constructor.
+     * @param Consult $consult
+     */
     public function __construct(Consult $consult)
     {
         $this->consult = $consult;
     }
 
+    /**
+     * @param $data
+     * @return mixed
+     */
     public function simplesPF($data)
     {
         $data = $this->consult->dataprocessedSimpleQuery($data);
         return $data;
     }
+
+    /**
+     * @param Request $request
+     * @return mixed
+     */
     public function store(Request $request)
     {
         $data = Consult::create($request->all());
