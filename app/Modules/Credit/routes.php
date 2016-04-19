@@ -5,7 +5,7 @@ Route::group([
     'module' => 'Credit',
     'namespace' => 'App\Modules\Credit\Http\Controllers'],
     function ()
-    {
+    {   Route::get('/',                                                         ['uses' => 'FrontController@index'    ]);
         Route::get('/credit/json/simplesPF/{cpf}',                              ['uses' => 'FrontController@simplesPF']);
         Route::post('/credit/json/simplesPF/{cpf}',                             ['uses' => 'FrontController@store'    ]);
     });

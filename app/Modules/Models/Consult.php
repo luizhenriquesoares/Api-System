@@ -188,14 +188,14 @@ class Consult extends Model
     public function dataprocessedSimpleQuery($data)
     {
         if ($this->getMonths($data)) {
-            $result = $this->dataProcessingSimpleQuery($data);
+            $result = $this->newConsultSimplesAssertiva($data);
             $this->saveOrUpdate($data);
             return response()->json($result);
         } else {
             if ($data = $this->getConsultDB($data)) {
                 return response()->json($data);
             } else {
-                $result = $this->dataProcessingSimpleQuery($data);
+                $result = $this->newConsultSimplesAssertiva($data);
                 $this->saveOrUpdate($data);
                 return response()->json($result);
             }

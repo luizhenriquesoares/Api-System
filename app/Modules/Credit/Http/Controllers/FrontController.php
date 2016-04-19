@@ -22,7 +22,13 @@ class FrontController extends Controller implements ConsultInterface
     {
         $this->consult = $consult;
     }
-
+    /**
+     * @return string
+     */
+    public function index()
+    {
+        return 'teste';
+    }
     /**
      * @param $data
      * @return mixed
