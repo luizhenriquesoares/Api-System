@@ -17,7 +17,7 @@ class ServiceContainerController extends Controller
     const SERASAUSER        =  'PSV-WS';
     const SERASAPASSWORD    = 'elomilhas@2016';
 
-    const ASSERTIVA         = 'http://portal.assertivasolucoes.com.br/api/v2/credito/json/simples/pf';
+    const ASSERTIVA         = 'http://portal.assertivasolucoes.com.br/api/1.0.0/localize/json/pf?';
     const SERASA            = 'http://portal.assertivasolucoes.com.br/api/v2/credito/json/simples/pf';
 
 

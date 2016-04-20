@@ -16,16 +16,20 @@ class Consult extends Model
         'updated_at'
     ];
 
-    // Pegar dados se Cpf Existir no banco
-
+    /**
+     * @param $data Pegar dados se Cpf Existir no banco
+     */
     public function getCpf($data)
     {
         $earliestdate = DB::table('consultas')
             ->select('*')
             ->where(['cpf' => $data])->get();
     }
-   //  Salva ou Atualiza os dados da consulta no Banco de Dados
-
+    /**
+     * @param $data
+     * @return \Closure
+     * Salva ou Atualiza os dados da consulta no Banco de Dados
+     */
     public function saveOrUpdate($data)
     {
         return function($result) use ($data) {
@@ -36,9 +40,11 @@ class Consult extends Model
             }
         };
     }
-
-    // se for maior que 6 meses faz uma nova consulta
-
+    /**
+     * @param $data
+     * @return mixed
+     * Se for maior que 6 meses faz uma nova consulta
+     */
     public function getMonths($data)
     {
         $mostDate  = DB::table('consultations')
@@ -49,9 +55,11 @@ class Consult extends Model
 
         return $mostDate;
     }
-
-    // pegar consulta se CPF existe na base dados
-
+    /**
+     * @param $data
+     * @return mixed
+     * Pegar consulta se CPF existe na base dados
+     */
     public function getConsultDB($data)
     {
         $earliestdate = DB::table('consultations')
@@ -62,9 +70,11 @@ class Consult extends Model
             return $earliestdate;
         }
     }
-
-  // Fazer uma nova consulta na api Assertiva e retorna json
-
+    /**
+     * @param $data
+     * @return mixed
+     * Fazer uma nova consulta na api Assertiva e retorna json
+     */
     public function newConsultSimplesAssertiva($data)
     {
         $Assertiva     = ApiController::getAssertiva($data);
@@ -72,9 +82,11 @@ class Consult extends Model
  
         return $itemAssertiva;
     }
-
-    // Fazer uma nova consulta na api Serasa e retorna json
-
+    /**
+     * @param $data
+     * @return
+     * mixed Fazer uma nova consulta na api Serasa e retorna json
+     */
     public function newConsultSimplesSerasa($data)
     {
         $Serasa     = ApiController::getSerasa($data);
@@ -82,9 +94,11 @@ class Consult extends Model
         
         return $itemSerasa;
     }
-
-    // Método que retorna o tratamento dos dados, envia para o processamento de validação
-
+    /**
+     * @param $Assertiva
+     * @return mixed
+     * Método que retorna o tratamento dos dados, envia para o processamento de validação
+     */
     public function dataProcessingAssertiva($Assertiva)
     {
         $Assertiva->name       = strtoupper($Assertiva->name);
@@ -96,9 +110,11 @@ class Consult extends Model
         
         return $Assertiva;
     }
-
-    // Método que retorna o tratamento dos dados, envia para o processamento de validação
-
+    /**
+     * @param $Serasa
+     * @return mixed
+     * Método que retorna o tratamento dos dados, envia para o processamento de validação
+     */
     public function dataProcessingSerasa($Serasa)
     {
         $Serasa->name          = strtoupper($Serasa->name);
@@ -110,9 +126,11 @@ class Consult extends Model
         
         return $Serasa;
     }
-
-    // Método que retorna o Cruzamento das Informaçoes
-
+    /**
+     * @param $Serasa
+     * @param $Assertiva
+     * @return Consult Método que retorna o Cruzamento das Informaçoes
+     */
     public function crossingData($Serasa, $Assertiva)
     {
         if($Serasa->cpf  != $Assertiva->cpf) {
@@ -131,9 +149,12 @@ class Consult extends Model
 
         return $result;
     }
-
-    // Método que retorna os dados Processados
-
+    /**
+     * @param $Serasa
+     * @param $Assertiva
+     * @return Consult
+     * Método que retorna os dados Processados
+     */
     public function dataProcessed($Serasa, $Assertiva)
     {
         $Assertiva     = $this->dataProcessingAssertiva($Assertiva);
@@ -143,7 +164,11 @@ class Consult extends Model
         return $data;
     }
 
-
+    /**
+     * @param $data
+     * @return Consult
+     * Método de Processamento de dados de consultas simples
+     */
     public function dataProcessingSimpleQuery($data)
     {
         $consultAssertiva     = $this->newConsultSimplesAssertiva($data);
@@ -154,17 +179,23 @@ class Consult extends Model
         // $result    = (array) $data;
         return $data;
     }
+
+    /**
+     * @param $data
+     * @return mixed
+     * Métodos dados processados Consulta Simples
+     */
     public function dataprocessedSimpleQuery($data)
     {
         if ($this->getMonths($data)) {
-            $result = $this->dataProcessingSimpleQuery($data);
+            $result = $this->newConsultSimplesAssertiva($data);
             $this->saveOrUpdate($data);
             return response()->json($result);
         } else {
             if ($data = $this->getConsultDB($data)) {
                 return response()->json($data);
             } else {
-                $result = $this->dataProcessingSimpleQuery($data);
+                $result = $this->newConsultSimplesAssertiva($data);
                 $this->saveOrUpdate($data);
                 return response()->json($result);
             }

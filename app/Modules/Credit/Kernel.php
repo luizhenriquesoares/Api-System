@@ -24,16 +24,14 @@ class Kernel extends HttpKernel
      */
     protected $middlewareGroups = [
         'web' => [
-            \App\Http\Middleware\EncryptCookies::class,
+            \App\Modules\ApiManager\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
-            \App\Http\Middleware\VerifyCsrfToken::class,
-
+            \App\Modules\ApiManager\Http\Middleware\VerifyCsrfToken::class
         ],
-
         'validate' => [
-            'throttle:60,1',
+            'throttle:120,1',
         ],
     ];
 
@@ -45,10 +43,11 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \App\Http\Middleware\Authenticate::class,
+        'auth' => \App\Modules\ApiManager\Http\Middleware\Authenticate::class,
+        'auth.api' =>  \App\Modules\ApiManager\Http\Middleware\AuthenticateWithApiAuth::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'guest' => \App\Modules\ApiManager\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'cors' => \App\Modules\Credit\Http\Middleware\Cors::class,
+        'cors' => \App\Modules\Credit\Http\Middleware\Cors::class
     ];
 }
