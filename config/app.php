@@ -151,12 +151,13 @@ return [
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
+//        App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Modules\Providers\ComposeServiceProvider::class,
         App\Modules\ModulesServiceProvider::class,
-
+        Collective\Html\HtmlServiceProvider::class,
+        \App\Modules\Providers\AuthServiceProvider::class,
 
     ],
 
@@ -203,7 +204,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
+        'Form'          => Collective\Html\FormFacade::class,
+        'Html'          => Collective\Html\HtmlFacade::class,
     ],
 
 ];

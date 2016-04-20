@@ -1,0 +1,7 @@
+/* Write your custom CSS here */
+
+.dropdown-menu.trashDestroy li span { display: block; clear: both; font-weight: 400; line-height: 1.42857143; white-space: nowrap; padding: 7px 10px; color: #5f5f5f; font-size: 13px; cursor: pointer; }
+.dropdown-menu.trashDestroy li span:hover { background: rgba(0,0,0,.04); }
+
+
+.list-unactive { border-left: 5px solid rgba(255,0,0,.7); }

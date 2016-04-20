@@ -1,0 +1,24 @@
+<table id="data-table-user-trash" class="display table" style="width: 100%; cellspacing: 0;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Permissão</th>
+            <th>Criado</th>
+            <th>Modificado</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Permissão</th>
+            <th>Criado</th>
+            <th>Modificado</th>
+            <th>Ação</th>
+        </tr>
+    </tfoot>
+</table>

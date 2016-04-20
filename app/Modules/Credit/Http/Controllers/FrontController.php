@@ -51,5 +51,3 @@ class FrontController extends Controller implements ConsultInterface
     }
 
 }
-
-

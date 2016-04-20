@@ -8,8 +8,7 @@
 
 namespace App\Modules\Traits;
 
-use App\Modules\Models\Search;
-use App\Modules\Home\Http\Traits\Utils\FlashMessages;
+use App\Modules\ApiManager\Http\Traits\Utils\FlashMessages;
 
 /**
  * Class Engine
@@ -51,27 +50,5 @@ trait Engine
          */
 
         $this->middleware('auth');
-
-        /**
-         * Compartilhar informações do usuário entre as views
-         *
-         * @use UserData
-         */
-        $this->shareData();
-
-        /**
-         * @var $this->search Search
-         */
-        $this->search       = new Search();
-
-        /**
-         * Obtenção do código de busca
-         */
-        $this->searchCode   =   \Session::get('searchs_id');
-
-        /**
-         * Captura e salva dados de acesso do cliente
-         */
-        //$this->getClientData();
     }
 }

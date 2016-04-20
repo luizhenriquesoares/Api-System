@@ -78,6 +78,34 @@ return [
             'schema' => 'public',
         ],
 
+        'crm' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST_CRM', 'localhost'),
+            'port' => env('DB_PORT_CRM', '3306'),
+            'database' => env('DB_DATABASE_CRM', 'forge'),
+            'username' => env('DB_USERNAME_CRM', 'forge'),
+            'password' => env('DB_PASSWORD_CRM', ''),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+        ],
+
+        'buscaaereo' => [
+            'driver' => 'mysql',
+            'host' => env('DB_HOST_BUSCA', 'localhost'),
+            'port' => env('DB_PORT_BUSCA', '3306'),
+            'database' => env('DB_DATABASE_BUSCA', 'forge'),
+            'username' => env('DB_USERNAME_BUSCA', 'forge'),
+            'password' => env('DB_PASSWORD_BUSCA', ''),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+        ]
+
     ],
 
     /*

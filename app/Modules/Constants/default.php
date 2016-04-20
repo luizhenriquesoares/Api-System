@@ -16,17 +16,17 @@ if(!defined('BASE'))
  * @const CSS_PATH
  */
 if(!defined('CSS_PATH'))
-    define('CSS_PATH', '/assets/home/css/');
+    define('CSS_PATH', '/assets/default/css/');
 
 /**
  * @const JS_PATH
  */
 
 if(!defined('JS_PATH'))
-    define('JS_PATH', '/assets/home/js/');
+    define('JS_PATH', '/assets/default/js/');
 
 /**
  * @const IMG_PATH
  */
 if(!defined('IMG_PATH'))
-    define('IMG_PATH', '/assets/home/img/');
+    define('IMG_PATH', '/assets/default/img/');
