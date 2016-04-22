@@ -4,24 +4,30 @@ namespace App\Modules\Models;
 use App\Modules\Credit\Http\Controllers\ApiConsultas\ApiController;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use PhpParser\Node\Expr\Empty_;
 
 class Consult extends Model
 {
-    protected $table = 'consultas';
+    protected $table = 'test_consult';
 
     protected $fillable = [
         'cpf',
         'name',
+        'idade',
+        'profissao',
         'created_at',
         'updated_at'
     ];
+<<<<<<< HEAD
 
+=======
+>>>>>>> funcionalidade
     /**
      * @param $data Pegar dados se Cpf Existir no banco
      */
     public function getCpf($data)
     {
-        $earliestdate = DB::table('consultas')
+        $earliestdate = DB::table('test_consult')
             ->select('*')
             ->where(['cpf' => $data])->get();
     }
@@ -47,13 +53,14 @@ class Consult extends Model
      */
     public function getMonths($data)
     {
-        $mostDate  = DB::table('consultations')
+        $mostDate  = DB::table('test_consult')
             ->select('*')
             ->where('cpf', '=', $data)
-            ->having('updated_at', '<=' , new \DateTime('-6 months'))
+            ->having('updated_at', '>=' , new \DateTime('-6 months'))
             ->get();
-
-        return $mostDate;
+        if($mostDate) {
+            return $mostDate;
+        }
     }
     /**
      * @param $data
@@ -62,7 +69,7 @@ class Consult extends Model
      */
     public function getConsultDB($data)
     {
-        $earliestdate = DB::table('consultations')
+        $earliestdate = DB::table('test_consult')
             ->select('*')
             ->where(['cpf' => $data])->get();
 
@@ -75,24 +82,32 @@ class Consult extends Model
      * @return mixed
      * Fazer uma nova consulta na api Assertiva e retorna json
      */
+<<<<<<< HEAD
     public function newConsultSimplesAssertiva($data)
+=======
+    public static function newConsultSimplesAssertiva($data)
+>>>>>>> funcionalidade
     {
         $Assertiva     = ApiController::getAssertiva($data);
         $itemAssertiva = json_decode($Assertiva);
- 
         return $itemAssertiva;
     }
     /**
      * @param $data
      * @return
+<<<<<<< HEAD
      * mixed Fazer uma nova consulta na api Serasa e retorna json
      */
     public function newConsultSimplesSerasa($data)
+=======
+     * mixed Fazer uma nova consulta na api CRM e retorna json
+     */
+    public function newConsultSimplesCRM($data)
+>>>>>>> funcionalidade
     {
-        $Serasa     = ApiController::getSerasa($data);
-        $itemSerasa = json_decode($Serasa);
-        
-        return $itemSerasa;
+        $CRM        = ApiController::getCRM($data);
+        $itemCRM    = json_decode($CRM);
+        return $itemCRM;
     }
     /**
      * @param $Assertiva
@@ -111,22 +126,31 @@ class Consult extends Model
         return $Assertiva;
     }
     /**
+<<<<<<< HEAD
      * @param $Serasa
      * @return mixed
      * Método que retorna o tratamento dos dados, envia para o processamento de validação
      */
     public function dataProcessingSerasa($Serasa)
+=======
+     * @param $CRM
+     * @return mixed
+     * Método que retorna o tratamento dos dados, envia para o processamento de validação
+     */
+    public function dataProcessingCRM($CRM)
+>>>>>>> funcionalidade
     {
-        $Serasa->name          = strtoupper($Serasa->name);
-        $Serasa->profissao     = strtoupper($Serasa->profissao);
-        $Serasa->name          = trim($Serasa->name);
-        $Serasa->profissao     = trim($Serasa->profissao);
-        $Serasa->name          = ltrim ($Serasa->name);
-        $Serasa->profissao     = ltrim ($Serasa->profissao);
+        $CRM->name          = strtoupper($CRM->name);
+        $CRM->profissao     = strtoupper($CRM->profissao);
+        $CRM->name          = trim($CRM->name);
+        $CRM->profissao     = trim($CRM->profissao);
+        $CRM->name          = ltrim ($CRM->name);
+        $CRM->profissao     = ltrim ($CRM->profissao);
         
-        return $Serasa;
+        return $CRM;
     }
     /**
+<<<<<<< HEAD
      * @param $Serasa
      * @param $Assertiva
      * @return Consult Método que retorna o Cruzamento das Informaçoes
@@ -135,35 +159,75 @@ class Consult extends Model
     {
         if($Serasa->cpf  != $Assertiva->cpf) {
             $cpf          = $Assertiva->cpf . ": 'Uma inconsistência no cpf foi encontrada'";
-        } else {
-            $cpf          = $Assertiva->cpf;
+=======
+     * @param $CRM
+     * @param $Assertiva
+     * @return Consult Método que retorna o Cruzamento das Informaçoes
+     */
+    public function crossingData($Assertiva, $CRM)
+    {
+        $CRM       = $this->dataProcessingCRM($CRM);
+        $Assertiva = $this->dataProcessingAssertiva($Assertiva);
+
+        if(empty($CRM->name)){
+
         }
-        if($Serasa->name != $Assertiva->name) {
-            $name         = $Assertiva->name . ": 'Uma inconsistência no nome foi encontrada'";
+
+        if($CRM->cpf          != $Assertiva->cpf) {
+            $cpf               = $Assertiva->cpf . ": 'Uma inconsistência no cpf foi encontrada'";
+>>>>>>> funcionalidade
         } else {
-            $name         = $Assertiva->name;
+            $cpf               = $Assertiva->cpf;
         }
+        if($CRM->name         != $Assertiva->name) {
+            $name              = $Assertiva->name . ": 'Uma inconsistência no nome foi encontrada'";
+        } else {
+            $name              = $Assertiva->name;
+        }
+        if($CRM->idade        != $Assertiva->idade) {
+            $idade             = $Assertiva->idade . ": 'Uma inconsistência no nome foi encontrada'";
+        } else {
+            $idade             = $Assertiva->idade;
+        }
+        if($CRM->profissao    != $Assertiva->profissao) {
+            $profissao         = $Assertiva->profissao . ": 'Uma inconsistência no nome foi encontrada'";
+        } else {
+            $profissao         = $Assertiva->profissao;
+        }
+
         $result = new Consult();
-        $result->cpf       = $cpf;
-        $result->name      = $name;
+        $result->cpf            = $cpf;
+        $result->name           = $name;
+        $result->idade          = $idade;
+        $result->profissao      = $profissao;
 
         return $result;
     }
     /**
+<<<<<<< HEAD
      * @param $Serasa
+=======
+     * @param $
+>>>>>>> funcionalidade
      * @param $Assertiva
      * @return Consult
      * Método que retorna os dados Processados
      */
+<<<<<<< HEAD
     public function dataProcessed($Serasa, $Assertiva)
+=======
+    public function dataProcessed($CRM, $Assertiva)
+>>>>>>> funcionalidade
     {
         $Assertiva     = $this->dataProcessingAssertiva($Assertiva);
-        $Serasa        = $this->dataProcessingSerasa($Serasa);
-        $data          = $this->crossingData($Assertiva, $Serasa);
-
+        $CRM           = $this->dataProcessingCRM($CRM);
+        $data          = $this->crossingData($Assertiva, $CRM);
         return $data;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> funcionalidade
     /**
      * @param $data
      * @return Consult
@@ -172,14 +236,16 @@ class Consult extends Model
     public function dataProcessingSimpleQuery($data)
     {
         $consultAssertiva     = $this->newConsultSimplesAssertiva($data);
-        $consultSerasa        = $this->newConsultSimplesSerasa($data);
+        $consultCRM           = $this->newConsultSimplesCRM($data);
         $dataAssertiva        = $this->dataProcessingAssertiva($consultAssertiva);
-        $dataSerasa           = $this->dataProcessingSerasa($consultSerasa);
-        $data                 = $this->crossingData($dataAssertiva, $dataSerasa);
-        // $result    = (array) $data;
+        $dataCRM              = $this->dataProcessingCRM($consultCRM);
+        $data                 = $this->crossingData($dataAssertiva, $dataCRM);
         return $data;
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> funcionalidade
     /**
      * @param $data
      * @return mixed
@@ -187,7 +253,15 @@ class Consult extends Model
      */
     public function dataprocessedSimpleQuery($data)
     {
+        /**
+         * Método getMonths verifica se cadastro existe a de menos 6 meses
+         * Método newConsultSimplesAssertiva e newConsultSimplesCRM
+         * Retorna uma nova consulta da API
+         * Método crossingData Retorna os dados validados com regra de
+         * cruzamento dos dados
+         */
         if ($this->getMonths($data)) {
+<<<<<<< HEAD
             $result = $this->newConsultSimplesAssertiva($data);
             $this->saveOrUpdate($data);
             return response()->json($result);
@@ -197,10 +271,25 @@ class Consult extends Model
             } else {
                 $result = $this->newConsultSimplesAssertiva($data);
                 $this->saveOrUpdate($data);
+=======
+            $assertiva = $this->newConsultSimplesAssertiva($data);
+            $CRM       = $this->newConsultSimplesCRM($data);
+            $result    = $this->crossingData($assertiva,$CRM);
+            return response()->json($result);
+        } else {
+                /**
+                 * CPF não existente no banco ou se cadastro existe a mais de 6 meses
+                 * Método newConsultSimplesAssertiva e newConsultSimplesCRM
+                 * Retorna uma nova consulta da API
+                 * Método crossingData Retorna os dados validados com regra de
+                 * cruzamento dos dados
+                 */
+                $assertiva = $this->newConsultSimplesAssertiva($data);
+                $CRM       = $this->newConsultSimplesCRM($data);
+                //dd($CRM->cpf);
+                $result    = $this->crossingData($assertiva,$CRM);
+>>>>>>> funcionalidade
                 return response()->json($result);
             }
-        }
-    }
-
-    
+       }
 }

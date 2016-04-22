@@ -22,6 +22,7 @@ class FrontController extends Controller
 
     public function index($cpf)
     {
+<<<<<<< HEAD
         $cpf = TestConsult::where('cpf', '=', $cpf);
 
         $result = false;
@@ -51,6 +52,9 @@ class FrontController extends Controller
         }
         return response()->json($result);
 
+=======
+        dd($cpf);
+>>>>>>> funcionalidade
     }
 }
 

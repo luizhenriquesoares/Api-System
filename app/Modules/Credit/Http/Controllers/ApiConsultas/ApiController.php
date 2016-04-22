@@ -9,17 +9,25 @@ use Illuminate\Routing\Controller;
 
 abstract class ApiController extends Controller implements ApiInterface
 {
-
+    /**
+     * @var $assertiva
+     */
     private $assertiva;
 
-    private $serasa;
+    /**
+     * @var $crm
+     */
+    private $crm;
 
     use ApiTrait;
 
+    /**
+     * ApiController constructor.
+     */
     public function __construct()
     {
         $assertiva = ServiceContainerController::inicializationAssertiva();
-        $serasa    = ServiceContainerController::inicializationSerasa();
+        $crm       = ServiceContainerController::inicializationCRM();
 
     }
 
