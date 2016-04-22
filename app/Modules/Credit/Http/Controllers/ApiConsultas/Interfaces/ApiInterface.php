@@ -13,7 +13,7 @@ interface ApiInterface
 {
 
     public static function getAssertiva($data);
-    public static function getSerasa($data);
+    public static function getCRM($data);
     public static function postAsseriva($data);
-    public static function postSerasa($data);
+    public static function postCRM($data);
 }

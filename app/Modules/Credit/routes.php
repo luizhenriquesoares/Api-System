@@ -3,7 +3,7 @@
 Route::group([
     'module' => 'Credit',
     'prefix' => 'api/credit/',
-    'middleware' => ['cors','auth.api:api'],
+    'middleware' => ['cors'],
     'namespace' => 'App\Modules\Credit\Http\Controllers'],
     function ()
     {   Route::get('/',                                                  ['uses' => 'FrontController@index'    ]);

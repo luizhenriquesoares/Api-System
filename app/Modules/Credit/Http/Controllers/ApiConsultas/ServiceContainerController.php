@@ -13,12 +13,15 @@ class ServiceContainerController extends Controller
     const ASSERTIVAUSER     = 'PSV-WS';
     const ASSERTIVAPASSWORD = 'elomilhas@2016';
 
-    const SERASACOMPANY     = 'PSV-TURISMO';
-    const SERASAUSER        =  'PSV-WS';
-    const SERASAPASSWORD    = 'elomilhas@2016';
+    const CRMCOMPANY     =   '';
+    const CRMUSER        =   '';
+    const CRMPASSWORD    =   '';
 
-    const ASSERTIVA         = 'http://portal.assertivasolucoes.com.br/api/1.0.0/localize/json/pf?';
-    const SERASA            = 'http://portal.assertivasolucoes.com.br/api/v2/credito/json/simples/pf';
+    /*const ASSERTIVA         = 'http://portal.assertivasolucoes.com.br/api/1.0.0/localize/json/pf?';
+    const SERASA            = '';*/
+
+    const ASSERTIVA         = 'http://localhost/dev-luiz/Estudos/TestarApi/public/api/assertiva/';
+    const CRM               = 'http://localhost/dev-luiz/Estudos/TestarApi/public/api/serasa/';
 
 
     public static function inicializationAssertiva()
@@ -29,10 +32,10 @@ class ServiceContainerController extends Controller
         ]);
     }
 
-    public static function inicializationSerasa()
+    public static function inicializationCRM()
     {
-        $serasa = new Client([
-            'base_url' => self::SERASA,
+        $crm = new Client([
+            'base_url' => self::CRM,
             'timeout' => 60,
         ]);
     }
