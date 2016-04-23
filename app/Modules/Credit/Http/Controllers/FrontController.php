@@ -38,10 +38,6 @@ class FrontController extends Controller implements ConsultInterface
         $data = $this->consult->dataprocessedSimpleQuery($data);
         return $data;
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> funcionalidade
     /**
      * @param Request $request
      * @return mixed
