@@ -102,7 +102,6 @@ class Consult extends Model
         $Assertiva = $this->assertiva->dataProcessing($Assertiva);
 
         if(empty($CRM->name)){
-
         }
 
         if($CRM->cpf          != $Assertiva->cpf) {
@@ -168,4 +167,5 @@ class Consult extends Model
                 return response()->json($result);
             }
        }
+
 }

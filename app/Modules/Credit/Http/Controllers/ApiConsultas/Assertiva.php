@@ -9,27 +9,13 @@
 namespace App\Modules\Credit\Http\Controllers\ApiConsultas;
 
 use App\Modules\Credit\Http\Controllers\ApiConsultas\Interfaces\ApiInterface;
+use App\Modules\Credit\Http\Controllers\ApiConsultas\Traits\AssertivaTrait;
 use App\Modules\Test\Credit\Http\Controllers\Controller;
-use GuzzleHttp\Client;
+
 
 class Assertiva extends Controller implements ApiInterface
 {
-    /**
-     * @var CRM
-     */
-    protected $CRM;
-
-    /**
-     * Assertiva constructor.
-     * @param Assertiva $assertiva
-     * @param CRM $CRM
-     */
-    public function __construct(Assertiva $assertiva, CRM $CRM)
-    {
-        $this->assertiva = $assertiva;
-        $this->CRM = $CRM;
-    }
-
+    use AssertivaTrait;
     /**
      * @param $data
      * @return mixed
@@ -58,67 +44,5 @@ class Assertiva extends Controller implements ApiInterface
 
         return $Assertiva;
     }
-
-    /**
-     * @param $data
-     * @return \Psr\Http\Message\StreamInterface
-     */
-    public function postAssertiva($data)
-    {
-        try {
-            $assertiva = new Client();
-            $response = $assertiva->request('POST', ServiceContainerController::ASSERTIVA . $data);
-            $result = $response->getBody();
-            return $result;
-        } catch (\Exception $e) {
-            die($e->getMessage());
-        }
-    }
-
-    /**
-     * @param $data
-     * @return \Psr\Http\Message\StreamInterface
-     */
-    public function getAssertiva($data)
-    {
-        try {
-            dd($data);
-            $assertiva = new Client();
-            $response = $assertiva->request('GET', ServiceContainerController::ASSERTIVA . $data);
-            $result = $response->getBody();
-            dd($result);
-            return $result;
-        } catch (\Exception $e) {
-            die($e->getMessage());
-        }
-    }
-}
-    /* public static function postAssertiva($data)
-   {
-       try {
-           $url = ServiceContainerController::ASSERTIVA     .'?empresa='. ServiceContainerController::ASSERTIVACOMPANY  . '&usuario='  .
-                  ServiceContainerController::ASSERTIVAUSER . '&senha=' . ServiceContainerController::ASSERTIVAPASSWORD .'&documento=' . $data;
-           $assertiva = new Client();
-           return $assertiva->request('POST', $url)->getBody();
-
-       } catch (\Exception $e) {
-           echo 'Exceção capturada: ', $e->getMessage(), "\n";
-       }
-   }
-
-   public static function getAssertiva($data)
-   {
-       try {
-           $url = ServiceContainerController::ASSERTIVA     .   '?empresa=' . ServiceContainerController::ASSERTIVACOMPANY  . '&usuario='  .
-                  ServiceContainerController::ASSERTIVAUSER . '  &senha='   . ServiceContainerController::ASSERTIVAPASSWORD .'&documento=' . $data;
-           $assertiva = new Client();
-           return $assertiva->request('GET', $url)->getBody();
-
-       } catch (\Exception $e) {
-           echo 'Exceção capturada: ', $e->getMessage(), "\n";
-       }
-   }
-
-
 
 }

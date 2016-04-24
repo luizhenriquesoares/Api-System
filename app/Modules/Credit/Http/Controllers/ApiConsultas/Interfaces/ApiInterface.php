@@ -1,11 +1,10 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Yoda
+ * User: Luiz Henrique Soares
  * Date: 03/04/2016
  * Time: 13:52
  */
-
 
 namespace App\Modules\Credit\Http\Controllers\ApiConsultas\Interfaces;
 
