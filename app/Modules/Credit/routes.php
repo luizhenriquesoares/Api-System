@@ -6,9 +6,9 @@ Route::group([
     'middleware' => ['cors'],
     'namespace' => 'App\Modules\Credit\Http\Controllers'],
     function ()
-    {   Route::get('/',                                                  ['uses' => 'FrontController@index'    ]);
-        Route::get('/json/simplesPF/{cpf}',                              ['uses' => 'FrontController@simplesPF']);
-        Route::post('/json/simplesPF/{cpf}',                             ['uses' => 'FrontController@store'    ]);
+    {
+        Route::get('/json/localiza/{cpf}',                              ['uses' => 'FrontController@index']);
+        Route::post('/json/localiza/{cpf}',                             ['uses' => 'FrontController@store']);
     });
 
 

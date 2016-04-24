@@ -22,17 +22,10 @@ class FrontController extends Controller
         $this->consult = $consult;
     }
     /**
-     * @return string
-     */
-    public function index()
-    {
-        return 'teste';
-    }
-    /**
      * @param $data
      * @return mixed
      */
-    public function simplesPF($data)
+    public function index($data)
     {
         $data = $this->consult->localizaSimples($data);
         return $data;
