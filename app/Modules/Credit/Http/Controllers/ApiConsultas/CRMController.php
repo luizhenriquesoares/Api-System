@@ -13,7 +13,7 @@ use App\Modules\Credit\Http\Controllers\ApiConsultas\Traits\CRMTrait;
 use App\Modules\CRM\Modules\CRM\Http\Controllers\Controller;
 
 
-class CRM extends Controller implements ApiInterface
+class CRMController extends Controller implements ApiInterface
 {
     use CRMTrait;
     /**

@@ -13,7 +13,7 @@ use App\Modules\Credit\Http\Controllers\ApiConsultas\Traits\AssertivaTrait;
 use App\Modules\Test\Credit\Http\Controllers\Controller;
 
 
-class Assertiva extends Controller implements ApiInterface
+class AssertivaController extends Controller implements ApiInterface
 {
     use AssertivaTrait;
     /**

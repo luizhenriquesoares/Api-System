@@ -1,8 +1,9 @@
 <?php
 namespace App\Modules\Models;
 
-use App\Modules\Credit\Http\Controllers\ApiConsultas\Assertiva;
-use App\Modules\Credit\Http\Controllers\ApiConsultas\CRM;
+
+use App\Modules\Credit\Http\Controllers\ApiConsultas\AssertivaController;
+use App\Modules\Credit\Http\Controllers\ApiConsultas\CRMController;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
@@ -31,7 +32,7 @@ class Consult extends Model
     /**
      * Consult constructor.
      */
-    public function __construct(Assertiva $assertiva, CRM $CRM)
+    public function __construct(AssertivaController $assertiva, CRMController $CRM)
     {
         $this->CRM = $CRM;
         $this->assertiva = $assertiva;
