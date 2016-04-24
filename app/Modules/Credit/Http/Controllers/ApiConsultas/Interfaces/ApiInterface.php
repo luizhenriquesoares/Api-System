@@ -11,9 +11,15 @@ namespace App\Modules\Credit\Http\Controllers\ApiConsultas\Interfaces;
 
 interface ApiInterface
 {
+    /**
+     * @param $data
+     * @return mixed
+     */
+    public function newConsultSimple($data);
 
-    public static function getAssertiva($data);
-    public static function getCRM($data);
-    public static function postAsseriva($data);
-    public static function postCRM($data);
+    /**
+     * @param $data
+     * @return mixed
+     */
+    public function dataProcessing($data);
 }

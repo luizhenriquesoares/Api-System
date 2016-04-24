@@ -2,12 +2,11 @@
 
 namespace App\Modules\Credit\Http\Controllers;
 
-use App\Modules\Credit\Http\Controllers\ApiConsultas\Interfaces\ConsultInterface;
 use App\Modules\Models\Consult;
 use Illuminate\Http\Request;
 
 
-class FrontController extends Controller implements ConsultInterface
+class FrontController extends Controller
 {
     /**
      * @var Consult
@@ -35,7 +34,7 @@ class FrontController extends Controller implements ConsultInterface
      */
     public function simplesPF($data)
     {
-        $data = $this->consult->dataprocessedSimpleQuery($data);
+        $data = $this->consult->localizaSimples($data);
         return $data;
     }
     /**

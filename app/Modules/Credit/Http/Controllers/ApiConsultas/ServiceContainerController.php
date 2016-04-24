@@ -3,8 +3,6 @@
 
 namespace App\Modules\Credit\Http\Controllers\ApiConsultas;
 
-
-use GuzzleHttp\Client;
 use Illuminate\Routing\Controller;
 
 class ServiceContainerController extends Controller
@@ -21,24 +19,8 @@ class ServiceContainerController extends Controller
     /*const ASSERTIVA         = 'http://portal.assertivasolucoes.com.br/api/1.0.0/localize/json/pf?';
     const SERASA            = '';*/
 
-    const ASSERTIVA         = 'http://localhost/dev-luiz/Estudos/TestarApi/public/api/assertiva/';
-    const CRM               = 'http://localhost/dev-luiz/Estudos/TestarApi/public/api/serasa/';
+    const ASSERTIVA         = 'http://localhost/Estudos/TestarApi/public/api/assertiva/';
+    const CRM               = 'http://localhost/Estudos/TestarApi/public/api/serasa/';
 
-
-    public static function inicializationAssertiva()
-    {
-        $assertiva = new Client([
-            'base_url' => self::ASSERTIVA,
-            'timeout' => 60,
-        ]);
-    }
-
-    public static function inicializationCRM()
-    {
-        $crm = new Client([
-            'base_url' => self::CRM,
-            'timeout' => 60,
-        ]);
-    }
     
 }

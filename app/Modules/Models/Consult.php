@@ -1,10 +1,11 @@
 <?php
 namespace App\Modules\Models;
 
-use App\Modules\Credit\Http\Controllers\ApiConsultas\ApiController;
+use App\Modules\Credit\Http\Controllers\ApiConsultas\Assertiva;
+use App\Modules\Credit\Http\Controllers\ApiConsultas\CRM;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use PhpParser\Node\Expr\Empty_;
+
 
 class Consult extends Model
 {
@@ -19,6 +20,22 @@ class Consult extends Model
         'updated_at'
     ];
 
+    /**
+     * @var CRM
+     */
+    protected $CRM;
+    /**
+     * @var Assertiva
+     */
+    protected $assertiva;
+    /**
+     * Consult constructor.
+     */
+    public function __construct(Assertiva $assertiva, CRM $CRM)
+    {
+        $this->CRM = $CRM;
+        $this->assertiva = $assertiva;
+    }
     /**
      * @param $data Pegar dados se Cpf Existir no banco
      */
@@ -75,67 +92,14 @@ class Consult extends Model
         }
     }
     /**
-     * @param $data
-     * @return mixed
-     * Fazer uma nova consulta na api Assertiva e retorna json
-     */
-
-    public static function newConsultSimplesAssertiva($data)
-    {
-        $Assertiva     = ApiController::getAssertiva($data);
-        $itemAssertiva = json_decode($Assertiva);
-        return $itemAssertiva;
-    }
-    /**
-     * mixed Fazer uma nova consulta na api CRM e retorna json
-     */
-    public function newConsultSimplesCRM($data)
-    {
-        $CRM        = ApiController::getCRM($data);
-        $itemCRM    = json_decode($CRM);
-        return $itemCRM;
-    }
-    /**
      * @param $Assertiva
-     * @return mixed
-     * Método que retorna o tratamento dos dados, envia para o processamento de validação
-     */
-    public function dataProcessingAssertiva($Assertiva)
-    {
-        $Assertiva->name       = strtoupper($Assertiva->name);
-        $Assertiva->profissao  = strtoupper($Assertiva->profissao);
-        $Assertiva->name       = trim($Assertiva->name);
-        $Assertiva->profissao  = trim($Assertiva->profissao);
-        $Assertiva->name       = ltrim ($Assertiva->name);
-        $Assertiva->profissao  = ltrim ($Assertiva->profissao);
-        
-        return $Assertiva;
-    }
-    /**
      * @param $CRM
-     * @return mixed
-     * Método que retorna o tratamento dos dados, envia para o processamento de validação
-     */
-    public function dataProcessingCRM($CRM)
-    {
-        $CRM->name          = strtoupper($CRM->name);
-        $CRM->profissao     = strtoupper($CRM->profissao);
-        $CRM->name          = trim($CRM->name);
-        $CRM->profissao     = trim($CRM->profissao);
-        $CRM->name          = ltrim ($CRM->name);
-        $CRM->profissao     = ltrim ($CRM->profissao);
-        
-        return $CRM;
-    }
-    /**
-     * @param $CRM
-     * @param $Assertiva
      * @return Consult Método que retorna o Cruzamento das Informaçoes
      */
     public function crossingData($Assertiva, $CRM)
     {
-        $CRM       = $this->dataProcessingCRM($CRM);
-        $Assertiva = $this->dataProcessingAssertiva($Assertiva);
+        $CRM       = $this->CRM->dataProcessing($CRM);
+        $Assertiva = $this->assertiva->dataProcessing($Assertiva);
 
         if(empty($CRM->name)){
 
@@ -162,7 +126,7 @@ class Consult extends Model
             $profissao         = $Assertiva->profissao;
         }
 
-        $result = new Consult();
+        $result = new \stdClass();
         $result->cpf            = $cpf;
         $result->name           = $name;
         $result->idade          = $idade;
@@ -171,38 +135,11 @@ class Consult extends Model
         return $result;
     }
     /**
-     * @param $Assertiva
-     * @return Consult
-     * Método que retorna os dados Processados
-     */
-    public function dataProcessed($CRM, $Assertiva)
-    {
-        $Assertiva     = $this->dataProcessingAssertiva($Assertiva);
-        $CRM           = $this->dataProcessingCRM($CRM);
-        $data          = $this->crossingData($Assertiva, $CRM);
-        return $data;
-    }
-    /**
-     * @param $data
-     * @return Consult
-     * Método de Processamento de dados de consultas simples
-     */
-    public function dataProcessingSimpleQuery($data)
-    {
-        $consultAssertiva     = $this->newConsultSimplesAssertiva($data);
-        $consultCRM           = $this->newConsultSimplesCRM($data);
-        $dataAssertiva        = $this->dataProcessingAssertiva($consultAssertiva);
-        $dataCRM              = $this->dataProcessingCRM($consultCRM);
-        $data                 = $this->crossingData($dataAssertiva, $dataCRM);
-        return $data;
-    }
-
-    /**
      * @param $data
      * @return mixed
      * Métodos dados processados Consulta Simples
      */
-    public function dataprocessedSimpleQuery($data)
+    public function localizaSimples($data)
     {
         /**
          * Método getMonths verifica se cadastro existe a de menos 6 meses
@@ -212,8 +149,8 @@ class Consult extends Model
          * cruzamento dos dados
          */
         if ($this->getMonths($data)) {
-            $assertiva = $this->newConsultSimplesAssertiva($data);
-            $CRM       = $this->newConsultSimplesCRM($data);
+            $assertiva = $this->assertiva->newConsultSimple($data);
+            $CRM       = $this->CRM->newConsultSimple($data);
             $result    = $this->crossingData($assertiva,$CRM);
             return response()->json($result);
 
@@ -225,10 +162,9 @@ class Consult extends Model
                  * Método crossingData Retorna os dados validados com regra de
                  * cruzamento dos dados
                  */
-                $assertiva = $this->newConsultSimplesAssertiva($data);
-                $CRM       = $this->newConsultSimplesCRM($data);
+                $assertiva = $this->assertiva->newConsultSimple($data);
+                $CRM       = $this->CRM->newConsultSimple($data);
                 $result    = $this->crossingData($assertiva,$CRM);
-
                 return response()->json($result);
             }
        }

@@ -28,7 +28,7 @@ $(function(){
         this.init('address', options, Address.defaults);
     };
 
-    //inherit from Abstract input
+    //inherit from ClassAbastract input
     $.fn.editableutils.inherit(Address, $.fn.editabletypes.abstractinput);
 
     $.extend(Address.prototype, {
