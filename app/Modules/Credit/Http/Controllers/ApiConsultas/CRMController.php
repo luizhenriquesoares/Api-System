@@ -11,6 +11,7 @@ namespace App\Modules\Credit\Http\Controllers\ApiConsultas;
 use App\Modules\Credit\Http\Controllers\ApiConsultas\Interfaces\ApiInterface;
 use App\Modules\Credit\Http\Controllers\ApiConsultas\Traits\CRMTrait;
 use App\Modules\CRM\Modules\CRM\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 
 class CRMController extends Controller implements ApiInterface
@@ -19,13 +20,17 @@ class CRMController extends Controller implements ApiInterface
     /**
      * @param $data
      * @return mixed
-     * Fazer uma nova consulta na api CRM e retorna json
+     * Faz uma consulta no banco de dados do CRM e retorna
+     * dados do cliente
      */
     public function newConsultSimple($data)
     {
-        $CRM        = $this->getCRM($data);
-        $itemCRM    = json_decode($CRM);
-        return $itemCRM;
+        $data = DB::table('elomilhas.providers')
+            ->select('*')
+            ->where(['cpf' => $data])->get();
+        if($data) {
+            return $data;
+        }
     }
     /**
      * @param $CRM

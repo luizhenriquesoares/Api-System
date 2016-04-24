@@ -28,7 +28,6 @@ trait CRMTrait
             die($e->getMessage());
         }
     }
-
     /**
      * @param $data
      * @return \Psr\Http\Message\StreamInterface

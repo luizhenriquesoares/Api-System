@@ -153,7 +153,6 @@ class Consult extends Model
             $CRM       = $this->CRM->newConsultSimple($data);
             $result    = $this->crossingData($assertiva,$CRM);
             return response()->json($result);
-
         } else {
                 /**
                  * CPF não existente no banco ou se cadastro existe a mais de 6 meses

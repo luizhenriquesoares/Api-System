@@ -15,7 +15,6 @@ class ServiceContainerController extends Controller
     const CRMUSER        =   '';
     const CRMPASSWORD    =   '';
 
-
     /*const ASSERTIVA         = 'http://portal.assertivasolucoes.com.br/api/1.0.0/localize/json/pf?';
     const SERASA            = '';*/
 
