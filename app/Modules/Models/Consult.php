@@ -155,9 +155,9 @@ class Consult extends Model
          */
         if ($this->getMonths($data)) {
             $assertiva = $this->assertiva->newConsultSimple($data);
-            $CRM       = $this->CRM->newConsultSimple($data);
-            $result    = $this->crossingData($assertiva,$CRM);
-            return response()->json($result);
+            //$CRM       = $this->CRM->newConsultSimple($data);
+            //$result    = $this->crossingData($assertiva,$CRM);
+            return response()->json($assertiva);
         } else {
                 /**
                  * CPF não existente no banco ou se cadastro existe a mais de 6 meses
@@ -167,9 +167,9 @@ class Consult extends Model
                  * cruzamento dos dados
                  */
                 $assertiva = $this->assertiva->newConsultSimple($data);
-                $CRM       = $this->CRM->newConsultSimple($data);
-                $result    = $this->crossingData($assertiva,$CRM);
-                return response()->json($result);
+                //$CRM       = $this->CRM->newConsultSimple($data);
+                //$result    = $this->crossingData($assertiva,$CRM);
+                return response()->json($assertiva);
             }
        }
 

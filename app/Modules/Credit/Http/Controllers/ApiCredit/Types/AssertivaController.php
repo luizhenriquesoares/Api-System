@@ -14,8 +14,6 @@ use App\Modules\Test\Credit\Http\Controllers\Controller;
 
 /**
  * Class AssertivaController
- * @method AssertivaTrait getAssertiva($data)
- * @method AssertivaTrait PostAssertiva($data)
  */
 class AssertivaController extends Controller implements ApiInterface
 {

@@ -28,11 +28,12 @@ class CRMController extends Controller implements ApiInterface
      */
     public function newConsultSimple($data)
     {
-        $data = DB::table('elomilhas.providers')
+        $result = DB::table('elomilhas.providers')
+            ->join('users', 'created_by',  '=', 'users.id')
             ->select('*')
-            ->where(['cpf' => $data])->get();
-        if($data) {
-            return $data;
+            ->where(['cpf' => $data])->first();
+        if($result) {
+            dd($result);
         }
     }
     /**
