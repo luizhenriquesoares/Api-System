@@ -23,13 +23,12 @@ class AssertivaController extends Controller implements ApiInterface
      * @return mixed
      * Fazer uma nova consulta na api Assertiva e retorna json
      */
-    public static function newConsultSimple($data)
+    public function newConsultSimple($data)
     {
-        $Assertiva = AssertivaController::getAssertiva($data);
+        $Assertiva = $this->getAssertiva($data);
         $itemAssertiva = json_decode($Assertiva);
         return $itemAssertiva;
     }
-
     /**
      * @param $Assertiva
      * @return mixed

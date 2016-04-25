@@ -18,8 +18,8 @@ class ServiceContainerController extends Controller
     /*const ASSERTIVA         = 'http://portal.assertivasolucoes.com.br/api/1.0.0/localize/json/pf?';
     const SERASA            = '';*/
 
-    const ASSERTIVA         = 'http://localhost/dev-luiz/Estudos/TestarApi/public/api/assertiva/';
-    const CRM               = '';
+    const ASSERTIVA         = 'http://localhost/Estudos/TestarApi/public/api/assertiva/';
+    const CRM               = 'http://localhost/Estudos/TestarApi/public/api/assertiva/';
 
-    
+
 }

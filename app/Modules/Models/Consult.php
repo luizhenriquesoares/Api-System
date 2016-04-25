@@ -23,6 +23,14 @@ class Consult extends Model
         'updated_at'
     ];
     /**
+     * Consult constructor.
+     * @param AssertivaController $client
+     */
+    public function __construct(AssertivaController $client)
+    {
+        $this->client = $client;
+    }
+    /**
      * @param $data Pegar dados se Cpf Existir no banco
      */
     public function getCpf($data)
@@ -41,10 +49,10 @@ class Consult extends Model
     {
         if($this->getCpf($data)) {
             $result = (array) $result;
-            $update = $this->update($result);
+            $this->update($result);
         } else {
             $result = (array) $result;
-            $create = $this->create($result);
+            $this->create($result);
         }
     }
     /**
@@ -73,7 +81,6 @@ class Consult extends Model
         $earliestdate = DB::table('test_consult')
             ->select('*')
             ->where(['cpf' => $data])->get();
-
         if($earliestdate) {
             return $earliestdate;
         }
@@ -145,8 +152,8 @@ class Consult extends Model
                  * Método crossingData Retorna os dados validados com regra de
                  * cruzamento dos dados
                  */
-                $assertiva = AssertivaController::newConsultSimple($data);
-                $this->saveOrUpdate($data, $assertiva);
+                $assertiva = $this->client->newConsultSimple($data);
+                //$this->saveOrUpdate($data, $assertiva);
                 return response()->json($assertiva);
             }
        }

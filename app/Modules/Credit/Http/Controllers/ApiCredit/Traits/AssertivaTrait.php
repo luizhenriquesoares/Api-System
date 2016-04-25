@@ -5,7 +5,6 @@
  * Date: 24/04/2016
  * Time: 18:45
  */
-
 namespace App\Modules\Credit\Http\Controllers\ApiCredit\Traits;
 
 use App\Modules\Credit\Http\Controllers\ApiCredit\Utils\ServiceContainerController;
@@ -21,7 +20,6 @@ trait AssertivaTrait
     {
         $this->client = $client;
     }
-
     /**
      * @param $data
      * @return \Psr\Http\Message\StreamInterface
@@ -31,7 +29,6 @@ trait AssertivaTrait
         try {
             $response = $this->client->request('POST', ServiceContainerController::ASSERTIVA . $data)->getBody();
             return $response;
-
         } catch (\Exception $e) {
             die($e->getMessage());
         }
