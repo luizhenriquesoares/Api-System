@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Modules\Credit\Http\Controllers\ApiCredit;
+namespace App\Modules\Credit\Http\Controllers\ApiCredit\Utils;
 
 use Illuminate\Routing\Controller;
 

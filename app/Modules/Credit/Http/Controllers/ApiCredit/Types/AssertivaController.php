@@ -12,6 +12,11 @@ use App\Modules\Credit\Http\Controllers\ApiCredit\Interfaces\ApiInterface;
 use App\Modules\Credit\Http\Controllers\ApiCredit\Traits\AssertivaTrait;
 use App\Modules\Test\Credit\Http\Controllers\Controller;
 
+/**
+ * Class AssertivaController
+ * @method AssertivaTrait getAssertiva($data)
+ * @method AssertivaTrait PostAssertiva($data)
+ */
 class AssertivaController extends Controller implements ApiInterface
 {
     use AssertivaTrait;
@@ -24,6 +29,7 @@ class AssertivaController extends Controller implements ApiInterface
     {
         $Assertiva = $this->getAssertiva($data);
         $itemAssertiva = json_decode($Assertiva);
+        dd($itemAssertiva);
         return $itemAssertiva;
     }
 

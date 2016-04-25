@@ -7,7 +7,10 @@
  */
 
 namespace App\Modules\Credit\Http\Controllers\ApiCredit\Interfaces;
-
+/**
+ * Interface ApiInterface
+ * @package App\Modules\Credit\Http\Controllers\ApiCredit\Interfaces
+ */
 interface ApiInterface
 {
     /**

@@ -13,7 +13,10 @@ use App\Modules\Credit\Http\Controllers\ApiCredit\Traits\CRMTrait;
 use App\Modules\CRM\Modules\CRM\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
-
+/**
+ * @method CRMTrait getCRM($data)
+ * @method CRMTrait PostCRM($data)
+ */
 class CRMController extends Controller implements ApiInterface
 {
     use CRMTrait;

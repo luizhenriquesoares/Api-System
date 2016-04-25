@@ -7,7 +7,10 @@ use App\Modules\Credit\Http\Controllers\ApiCredit\Types\CRMController;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
-
+/**
+ * Class Consult
+ * @package App\Modules\Models
+ */
 class Consult extends Model
 {
     protected $table = 'test_consult';
@@ -31,6 +34,8 @@ class Consult extends Model
     protected $assertiva;
     /**
      * Consult constructor.
+     * @param AssertivaController $assertiva
+     * @param CRMController $CRM
      */
     public function __construct(AssertivaController $assertiva, CRMController $CRM)
     {

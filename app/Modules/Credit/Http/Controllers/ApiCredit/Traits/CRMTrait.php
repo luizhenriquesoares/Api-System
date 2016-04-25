@@ -8,22 +8,29 @@
 
 namespace App\Modules\Credit\Http\Controllers\ApiCredit\Traits;
 
-use App\Modules\Credit\Http\Controllers\ApiCredit\ServiceContainerController;
+
+use App\Modules\Credit\Http\Controllers\ApiCredit\Utils\ServiceContainerController;
 use GuzzleHttp\Client;
 
 trait CRMTrait
 {
     /**
+     * AssertivaTrait constructor.
+     * @param Client $client
+     */
+    public function __construct(Client $client)
+    {
+        $this->client = $client;
+    }
+    /**
      * @param $data
      * @return \Psr\Http\Message\StreamInterface
      */
-    public static function getCRM($data)
+    public function getCRM($data)
     {
         try {
-            $crm = new Client();
-            $response = $crm->request('GET', ServiceContainerController::CRM . $data);
-            $result1 = $response->getBody();
-            return $result1;
+            $response = $this->client->request('GET', ServiceContainerController::CRM . $data)->getBody();
+            return $response;
         } catch (\Exception $e) {
             die($e->getMessage());
         }
@@ -32,13 +39,11 @@ trait CRMTrait
      * @param $data
      * @return \Psr\Http\Message\StreamInterface
      */
-    public static function postCRM($data)
+    public function postCRM($data)
     {
         try {
-            $serasa = new Client();
-            $response = $serasa->request('POST', ServiceContainerController::CRM . $data);
-            $result1 = $response->getBody();
-            return $result1;
+            $response = $this->client->request('POST', ServiceContainerController::CRM . $data)->getBody();
+            return $response;
         } catch (\Exception $e) {
             die($e->getMessage());
         }
@@ -48,25 +53,20 @@ trait CRMTrait
    public static function postCRM($data)
    {
        try {
-            $url = ServiceContainerController::SERASA     . '?empresa=' . ServiceContainerController::SERASACOMPANY  . '&usuario='  .
-                   ServiceContainerController::SERASAUSER . '&senha='   . ServiceContainerController::SERASAPASSWORD .'&documento=' . $data;
-           $serasa = new Client();
-           return $serasa->request('POST', $url)->getBody();
-
+            $response = $this->client->request('POST',ServiceContainerController::SERASA . '?empresa=' . ServiceContainerController::SERASACOMPANY  . '&usuario='  .
+                   ServiceContainerController::SERASAUSER . '&senha='   . ServiceContainerController::SERASAPASSWORD .'&documento=' . $data)->getBody();
+            return $response;
        } catch (\Exception $e) {
            echo 'Exceção capturada: ', $e->getMessage(), "\n";
-
        }
    }
 
    public static function getCRM($data)
    {
-       try {
-           $url = ServiceContainerController::SERASA     . '?empresa=' .   ServiceContainerController::SERASACOMPANY  . '&usuario='  .
-                  ServiceContainerController::SERASAUSER . '&senha='   .   ServiceContainerController::SERASAPASSWORD .'&documento=' . $data;
-           $serasa = new Client();
-           return $serasa->request('GET', $url)->getBody();
-
+        try {
+            $response = $this->client->request('GET',ServiceContainerController::SERASA . '?empresa=' . ServiceContainerController::SERASACOMPANY  . '&usuario='  .
+                   ServiceContainerController::SERASAUSER . '&senha='   . ServiceContainerController::SERASAPASSWORD .'&documento=' . $data)->getBody();
+            return $response;
        } catch (\Exception $e) {
            echo 'Exceção capturada: ', $e->getMessage(), "\n";
        }
