@@ -29,7 +29,6 @@ class AssertivaController extends Controller implements ApiInterface
     {
         $Assertiva = $this->getAssertiva($data);
         $itemAssertiva = json_decode($Assertiva);
-        dd($itemAssertiva);
         return $itemAssertiva;
     }
 

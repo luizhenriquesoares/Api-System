@@ -43,8 +43,8 @@ trait AssertivaTrait
     public function getAssertiva($data)
     {
         try {
-            $response = $this->client->requestAsync('GET', ServiceContainerController::ASSERTIVA . $data);
-            return $response->wait();
+            $response = $this->client->request('GET', ServiceContainerController::ASSERTIVA . $data)->getBody();
+            return $response;
         } catch (\Exception $e) {
             die($e->getMessage());
         }
