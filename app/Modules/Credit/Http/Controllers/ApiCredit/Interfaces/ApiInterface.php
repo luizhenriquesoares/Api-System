@@ -6,7 +6,7 @@
  * Time: 13:52
  */
 
-namespace App\Modules\Credit\Http\Controllers\ApiConsultas\Interfaces;
+namespace App\Modules\Credit\Http\Controllers\ApiCredit\Interfaces;
 
 interface ApiInterface
 {

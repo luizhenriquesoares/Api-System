@@ -6,9 +6,9 @@
  * Time: 19:54
  */
 
-namespace App\Modules\Credit\Http\Controllers\ApiConsultas\Traits;
+namespace App\Modules\Credit\Http\Controllers\ApiCredit\Traits;
 
-use App\Modules\Credit\Http\Controllers\ApiConsultas\ServiceContainerController;
+use App\Modules\Credit\Http\Controllers\ApiCredit\ServiceContainerController;
 use GuzzleHttp\Client;
 
 trait CRMTrait

@@ -2,8 +2,8 @@
 namespace App\Modules\Models;
 
 
-use App\Modules\Credit\Http\Controllers\ApiConsultas\AssertivaController;
-use App\Modules\Credit\Http\Controllers\ApiConsultas\CRMController;
+use App\Modules\Credit\Http\Controllers\ApiCredit\Types\AssertivaController;
+use App\Modules\Credit\Http\Controllers\ApiCredit\Types\CRMController;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 

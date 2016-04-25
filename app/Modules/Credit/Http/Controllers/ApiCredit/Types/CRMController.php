@@ -6,10 +6,10 @@
  * Time: 15:11
  */
 
-namespace App\Modules\Credit\Http\Controllers\ApiConsultas;
+namespace App\Modules\Credit\Http\Controllers\ApiCredit\Types;
 
-use App\Modules\Credit\Http\Controllers\ApiConsultas\Interfaces\ApiInterface;
-use App\Modules\Credit\Http\Controllers\ApiConsultas\Traits\CRMTrait;
+use App\Modules\Credit\Http\Controllers\ApiCredit\Interfaces\ApiInterface;
+use App\Modules\Credit\Http\Controllers\ApiCredit\Traits\CRMTrait;
 use App\Modules\CRM\Modules\CRM\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
