@@ -3,7 +3,6 @@ namespace App\Modules\Models;
 
 
 use App\Modules\Credit\Http\Controllers\ApiCredit\Types\AssertivaController;
-use App\Modules\Credit\Http\Controllers\ApiCredit\Types\CRMController;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
@@ -23,25 +22,6 @@ class Consult extends Model
         'created_at',
         'updated_at'
     ];
-
-    /**
-     * @var CRM
-     */
-    protected $CRM;
-    /**
-     * @var Assertiva
-     */
-    protected $assertiva;
-    /**
-     * Consult constructor.
-     * @param AssertivaController $assertiva
-     * @param CRMController $CRM
-     */
-    public function __construct(AssertivaController $assertiva, CRMController $CRM)
-    {
-        $this->CRM = $CRM;
-        $this->assertiva = $assertiva;
-    }
     /**
      * @param $data Pegar dados se Cpf Existir no banco
      */
@@ -50,21 +30,22 @@ class Consult extends Model
         $earliestdate = DB::table('test_consult')
             ->select('*')
             ->where(['cpf' => $data])->get();
+        return $earliestdate;
     }
     /**
      * @param $data
      * @return \Closure
      * Salva ou Atualiza os dados da consulta no Banco de Dados
      */
-    public function saveOrUpdate($data)
+    public function saveOrUpdate($data, $result)
     {
-        return function($result) use ($data) {
-            if($this->getCpf($data)) {
-                $update  = Consult::update($result);
-            } else {
-                $create  = Consult::create($result);
-            }
-        };
+        if($this->getCpf($data)) {
+            $result = (array) $result;
+            $update = $this->update($result);
+        } else {
+            $result = (array) $result;
+            $create = $this->create($result);
+        }
     }
     /**
      * @param $data
@@ -149,15 +130,13 @@ class Consult extends Model
         /**
          * Método getMonths verifica se cadastro existe a de menos 6 meses
          * Método newConsultSimplesAssertiva e newConsultSimplesCRM
-         * Retorna uma nova consulta da API
+         * Retorna uma consulta do BD
          * Método crossingData Retorna os dados validados com regra de
          * cruzamento dos dados
          */
         if ($this->getMonths($data)) {
-            $assertiva = $this->assertiva->newConsultSimple($data);
-            //$CRM       = $this->CRM->newConsultSimple($data);
-            //$result    = $this->crossingData($assertiva,$CRM);
-            return response()->json($assertiva);
+            $consult = $this->getConsultDB($data);
+            return response()->json($consult);
         } else {
                 /**
                  * CPF não existente no banco ou se cadastro existe a mais de 6 meses
@@ -166,9 +145,8 @@ class Consult extends Model
                  * Método crossingData Retorna os dados validados com regra de
                  * cruzamento dos dados
                  */
-                $assertiva = $this->assertiva->newConsultSimple($data);
-                //$CRM       = $this->CRM->newConsultSimple($data);
-                //$result    = $this->crossingData($assertiva,$CRM);
+                $assertiva = AssertivaController::newConsultSimple($data);
+                $this->saveOrUpdate($data, $assertiva);
                 return response()->json($assertiva);
             }
        }

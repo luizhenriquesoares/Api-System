@@ -26,7 +26,7 @@ class CRMController extends Controller implements ApiInterface
      * Faz uma consulta no banco de dados do CRM e retorna
      * dados do cliente
      */
-    public function newConsultSimple($data)
+    public static function newConsultSimple($data)
     {
         $result = DB::table('elomilhas.providers')
             ->join('users', 'created_by',  '=', 'users.id')

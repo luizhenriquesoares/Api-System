@@ -17,7 +17,7 @@ interface ApiInterface
      * @param $data
      * @return mixed
      */
-    public function newConsultSimple($data);
+    public static function newConsultSimple($data);
 
     /**
      * @param $data

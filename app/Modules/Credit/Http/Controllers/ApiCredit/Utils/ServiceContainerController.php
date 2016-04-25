@@ -19,7 +19,7 @@ class ServiceContainerController extends Controller
     const SERASA            = '';*/
 
     const ASSERTIVA         = 'http://localhost/dev-luiz/Estudos/TestarApi/public/api/assertiva/';
-    const CRM               = 'http://localhost/dev-luiz/Estudos/TestarApi/public/api/assertiva/';
+    const CRM               = '';
 
     
 }
