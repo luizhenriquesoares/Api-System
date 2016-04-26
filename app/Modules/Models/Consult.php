@@ -157,7 +157,7 @@ class Consult extends Model
                  * cruzamento dos dados
                  */
                 $assertiva = $this->client->newConsultSimple($data);
-                $this->saveOrUpdate($data, $assertiva);
+                //$this->saveOrUpdate($data, $assertiva);
                 return response()->json($assertiva);
             }
        }

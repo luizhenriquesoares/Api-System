@@ -24,7 +24,7 @@ trait AssertivaTrait
      * @param $data
      * @return \Psr\Http\Message\StreamInterface
      */
-    public function postAssertiva($data)
+   /* public function postAssertiva($data)
     {
         try {
             $response = $this->client->request('POST', ServiceContainerController::ASSERTIVA . $data)->getBody();
@@ -37,7 +37,7 @@ trait AssertivaTrait
      * @param $data
      * @return \Psr\Http\Message\StreamInterface
      */
-    public function getAssertiva($data)
+    /*public function getAssertiva($data)
     {
         try {
             $response = $this->client->request('GET', ServiceContainerController::ASSERTIVA . $data)->getBody();
@@ -45,26 +45,35 @@ trait AssertivaTrait
         } catch (\Exception $e) {
             die($e->getMessage());
         }
-    }
-}
-/* public static function postAssertiva($data)
+    }*/
+
+    /**
+     * @param $data
+     * @return \Psr\Http\Message\StreamInterface
+     */
+ public function postAssertiva($data)
 {
    try {
        $response = $this->client->request('POST',ServiceContainerController::ASSERTIVA  .'?empresa='. ServiceContainerController::ASSERTIVACOMPANY  . '&usuario='  .
               ServiceContainerController::ASSERTIVAUSER . '&senha=' . ServiceContainerController::ASSERTIVAPASSWORD .'&documento=' . $data)->getBody();
-       return $reponse;
+       return $response;
    } catch (\Exception $e) {
        echo 'Exceção capturada: ', $e->getMessage(), "\n";
    }
 }
-
-public static function getAssertiva($data)
+    /**
+     * @param $data
+     * @return \Psr\Http\Message\StreamInterface
+     */
+public function getAssertiva($data)
 {
    try {
        $response = $this->client->request('GET',ServiceContainerController::ASSERTIVA .'?empresa='. ServiceContainerController::ASSERTIVACOMPANY  . '&usuario='  .
               ServiceContainerController::ASSERTIVAUSER . '&senha=' . ServiceContainerController::ASSERTIVAPASSWORD .'&documento=' . $data)->getBody();
-       return $reponse;
+       return $response;
    } catch (\Exception $e) {
        echo 'Exceção capturada: ', $e->getMessage(), "\n";
    }
+ }
+
 }
