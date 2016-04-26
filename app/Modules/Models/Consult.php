@@ -22,13 +22,17 @@ class Consult extends Model
         'created_at',
         'updated_at'
     ];
+    protected $client;
     /**
      * Consult constructor.
      * @param AssertivaController $client
      */
-    public function __construct(AssertivaController $client)
+    public function __construct(array $attributes = array(), AssertivaController $client = null)
     {
+        /* override your model constructor */
+        parent::__construct($attributes);
         $this->client = $client;
+
     }
     /**
      * @param $data Pegar dados se Cpf Existir no banco
@@ -52,7 +56,7 @@ class Consult extends Model
             $this->update($result);
         } else {
             $result = (array) $result;
-            $this->create($result);
+            $create = $this->create($result);
         }
     }
     /**
@@ -153,7 +157,7 @@ class Consult extends Model
                  * cruzamento dos dados
                  */
                 $assertiva = $this->client->newConsultSimple($data);
-                //$this->saveOrUpdate($data, $assertiva);
+                $this->saveOrUpdate($data, $assertiva);
                 return response()->json($assertiva);
             }
        }
