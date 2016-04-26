@@ -25,9 +25,16 @@ class AssertivaController extends Controller implements ApiInterface
      */
     public function newConsultSimple($data)
     {
-        $Assertiva = $this->getAssertiva($data);
+        $data = new \stdClass();
+        $data->cpf = '101.808.704-40';
+        $data->name = "Luiz Henrique Soares";
+        $data->idade = '22';
+        $data->profissao = 'Analista de Sistemas';
+        return $data;
+
+        /*$Assertiva = $this->getAssertiva($data);
         $itemAssertiva = json_decode($Assertiva);
-        return $itemAssertiva;
+        return $itemAssertiva;*/
     }
     /**
      * @param $Assertiva
