@@ -17,8 +17,28 @@ class Consult extends Model
     protected $fillable = [
         'cpf',
         'name',
-        'idade',
+        'data',
+        'signo',
+        'sexo',
+        'mae',
+        'rg',
+        'telFixo1',
+        'telFixo2',
+        'telFixo3',
+        'telFixo4',
+        'logradouro',
+        'complemento',
+        'bairro',
+        'cidade',
+        'uf',
+        'cep',
+        'email1',
+        'email2',
+        'email3',
+        'email4',
         'profissao',
+        'empresa',
+        'renda',
         'created_at',
         'updated_at'
     ];
@@ -52,11 +72,12 @@ class Consult extends Model
     public function saveOrUpdate($data, $result)
     {
         if($this->getCpf($data)) {
+            $this->destroy($result->name);
             $result = (array) $result;
-            $this->update($result);
+            $this->create($result);
         } else {
             $result = (array) $result;
-            $create = $this->create($result);
+            $this->create($result);
         }
     }
     /**
@@ -75,6 +96,7 @@ class Consult extends Model
             return $mostDate;
         }
     }
+
     /**
      * @param $data
      * @return mixed
@@ -84,9 +106,10 @@ class Consult extends Model
     {
         $earliestdate = DB::table('test_consult')
             ->select('*')
-            ->where(['cpf' => $data])->get();
+            ->where(['cpf' => $data])->first();
         if($earliestdate) {
-            return $earliestdate;
+            $data = (object) $earliestdate;
+            return $data;
         }
     }
     /**

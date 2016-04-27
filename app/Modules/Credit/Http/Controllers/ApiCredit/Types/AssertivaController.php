@@ -25,12 +25,12 @@ class AssertivaController extends Controller implements ApiInterface
      */
     public function newConsultSimple($data)
     {
-        /*$result = new \Stdclass();
+        $result = new \stdClass();
         $result->cpf  = "101.808.704-40";
         $result->name = "Luiz Henrique Soares";
         $result->data = '23/03/1991';
         $result->signo ='Touro';
-        $result->sexo = "Masculono";
+        $result->sexo = "Masculino";
         $result->mae  = "Monica Maria Brito Botelho";
         $result->rg   = "454544";
         $result->telFixo1 = "(81)3432-3911";
@@ -49,19 +49,15 @@ class AssertivaController extends Controller implements ApiInterface
         $result->email4 = "luizhenrique0377@outlook.com";
         $result->profissao = 'Analista de Sistemas';
         $result->empresa = "PSV Turismo";
-        $result->renda = "Até 2 SM";*/
+        $result->renda = "Até 2 SM";
+        $result->created_at = date("Y-m-d H:i:s");
+        $result->updated_at = date("Y-m-d H:i:s");
 
-        /*$data = new \stdClass();
-        $data->cpf = '101.808.704-40';
-        $data->name = "Luiz Henrique Soares";
-        $data->idade = '22';
-        $data->profissao = 'Analista de Sistemas';
+        return $result;
 
-        return $data;*/
-
-        $Assertiva = $this->getAssertiva($data);
+        /*$Assertiva = $this->getAssertiva($data);
         $itemAssertiva = json_decode($Assertiva);
-        return $itemAssertiva;
+        return $itemAssertiva;*/
     }
     /**
      * @param $Assertiva
