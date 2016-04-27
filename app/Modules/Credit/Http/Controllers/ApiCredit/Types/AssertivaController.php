@@ -25,16 +25,43 @@ class AssertivaController extends Controller implements ApiInterface
      */
     public function newConsultSimple($data)
     {
-        $data = new \stdClass();
+        /*$result = new \Stdclass();
+        $result->cpf  = "101.808.704-40";
+        $result->name = "Luiz Henrique Soares";
+        $result->data = '23/03/1991';
+        $result->signo ='Touro';
+        $result->sexo = "Masculono";
+        $result->mae  = "Monica Maria Brito Botelho";
+        $result->rg   = "454544";
+        $result->telFixo1 = "(81)3432-3911";
+        $result->telFixo2 = "(81)3432-3232";
+        $result->telFixo3 = "(81)3432-3232";
+        $result->telFixo4 = "(81)3432-3232";
+        $result->logradouro = "Rua Maria da Conceição Viana, N1360";
+        $result->complemento = "apt 202";
+        $result->bairro = "Jardim Atlãntico";
+        $result->cidade = "Olinda";
+        $result->uf = "PE";
+        $result->cep = "53050-110";
+        $result->email1 = "luizhenriquesoares91@gmail.com";
+        $result->email2 = "luizhenrique0377@outlook.com";
+        $result->email3 = "luizhenrique0377@outlook.com";
+        $result->email4 = "luizhenrique0377@outlook.com";
+        $result->profissao = 'Analista de Sistemas';
+        $result->empresa = "PSV Turismo";
+        $result->renda = "Até 2 SM";*/
+
+        /*$data = new \stdClass();
         $data->cpf = '101.808.704-40';
         $data->name = "Luiz Henrique Soares";
         $data->idade = '22';
         $data->profissao = 'Analista de Sistemas';
-        return $data;
 
-        /*$Assertiva = $this->getAssertiva($data);
+        return $data;*/
+
+        $Assertiva = $this->getAssertiva($data);
         $itemAssertiva = json_decode($Assertiva);
-        return $itemAssertiva;*/
+        return $itemAssertiva;
     }
     /**
      * @param $Assertiva

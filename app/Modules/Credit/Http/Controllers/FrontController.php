@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Modules\Credit\Http\Controllers;
-
-use App\Modules\Credit\Http\Controllers\ApiCredit\Types\AssertivaController;
+    
 use App\Modules\Models\Consult;
 use Illuminate\Http\Request;
 
