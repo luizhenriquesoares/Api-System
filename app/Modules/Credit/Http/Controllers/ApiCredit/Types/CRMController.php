@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: Luiz Henrique Soares
  * Date: 24/04/2016
- * Time: 15:11
+ * Time: 15:12
  */
 
 namespace App\Modules\Credit\Http\Controllers\ApiCredit\Types;
