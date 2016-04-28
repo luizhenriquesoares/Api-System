@@ -17,6 +17,5 @@ class ServiceContainerController extends Controller
     
     const ASSERTIVA         = 'http://portal.assertivasolucoes.com.br/api/1.0.0/localize/json/pf';
     const CRM               = 'http://localhost/Estudos/TestarApi/public/api/assertiva/';
-
-
+    
 }

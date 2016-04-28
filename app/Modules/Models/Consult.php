@@ -90,6 +90,7 @@ class Consult extends Model
                 $partThree   = substr($cpf, 6, 3);
                 $partFour    = substr($cpf, 9, 2);
                 $mountCPF = "$partOne.$partTwo.$partThree-$partFour";
+
                 return $mountCPF;
             }
         } else {
@@ -113,7 +114,7 @@ class Consult extends Model
      */
     public function saveOrUpdate($data, $result)
     {
-        if($consult = $this->getCpf($data)) {
+            if($consult = $this->getCpf($data)) {
                 $this->destroy($consult->id);
                 $result = (array) $result;
                 $this->create($result);
@@ -138,7 +139,6 @@ class Consult extends Model
             return $mostDate;
         }
     }
-
     /**
      * @param $data
      * @return mixed
@@ -206,7 +206,7 @@ class Consult extends Model
         /**
          * Método Validar CPF e Formatar no Padrão xxx.xxx.xxx-xx
          */
-        $data      = $this->formatCpf($data);
+        $data = $this->formatCpf($data);
         /**
          * Método getMonths verifica se cadastro existe a de menos 6 meses
          * Método newConsultSimplesAssertiva e newConsultSimplesCRM
@@ -230,5 +230,5 @@ class Consult extends Model
                 return response()->json($assertiva);
             }
        }
-
+    
 }

@@ -24,33 +24,6 @@ trait AssertivaTrait
      * @param $data
      * @return \Psr\Http\Message\StreamInterface
      */
-   /* public function postAssertiva($data)
-    {
-        try {
-            $response = $this->client->request('POST', ServiceContainerController::ASSERTIVA . $data)->getBody();
-            return $response;
-        } catch (\Exception $e) {
-            die($e->getMessage());
-        }
-    }
-    /**
-     * @param $data
-     * @return \Psr\Http\Message\StreamInterface
-     */
-    /*public function getAssertiva($data)
-    {
-        try {
-            $response = $this->client->request('GET', ServiceContainerController::ASSERTIVA . $data)->getBody();
-            return $response;
-        } catch (\Exception $e) {
-            die($e->getMessage());
-        }
-    }*/
-
-    /**
-     * @param $data
-     * @return \Psr\Http\Message\StreamInterface
-     */
  public function postAssertiva($data)
 {
    try {
