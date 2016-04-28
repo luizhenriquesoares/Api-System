@@ -54,6 +54,27 @@ class Consult extends Model
         $this->client = $client;
 
     }
+
+    /**
+     * @param $cpf
+     * @return string
+     * Método recebe CPF e Formatar no Padrão xxx.xxx.xxx-xx, caso já seja formatado
+     * ele Retorna ele mesmo
+     */
+    public function formatCpf($cpf)
+    {
+        if (strlen($cpf) == 14){
+            return $cpf;
+        } else {
+            $partOne     = substr($cpf, 0, 3);
+            $partTwo     = substr($cpf, 3, 3);
+            $partThree   = substr($cpf, 6, 3);
+            $partFour    = substr($cpf, 9, 2);
+            $mountCPF = "$partOne.$partTwo.$partThree-$partFour";
+            return $mountCPF;
+        }
+    }
+    
     /**
      * @param $data Pegar dados se Cpf Existir no banco
      */

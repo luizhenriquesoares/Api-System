@@ -27,7 +27,8 @@ class FrontController extends Controller
      */
     public function index($data)
     {
-        $data = $this->consult->localizaSimples($data);
+        $cpf  = $this->consult->formatCpf($data);
+        $data = $this->consult->localizaSimples($cpf);
         return $data;
     }
     /**
