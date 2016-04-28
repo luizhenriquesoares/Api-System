@@ -1,4 +1,5 @@
 <?php
+
 Route::group([
     'prefix' => 'api/crm/v0.1.1',
     'middleware' => ['auth.api:api'],

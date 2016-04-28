@@ -3,7 +3,11 @@
  * Created by PhpStorm.
  * User: Luiz Henrique Soares
  * Date: 24/04/2016
+<<<<<<< HEAD
  * Time: 15:12
+=======
+ * Time: 15:11
+>>>>>>> refatoração
  */
 
 namespace App\Modules\Credit\Http\Controllers\ApiCredit\Types;
@@ -26,7 +30,8 @@ class CRMController extends Controller implements ApiInterface
      * Faz uma consulta no banco de dados do CRM e retorna
      * dados do cliente
      */
-    public static function newConsultSimple($data)
+
+    public function newConsultSimple($data)
     {
         $result = DB::table('elomilhas.providers')
             ->join('users', 'created_by',  '=', 'users.id')
