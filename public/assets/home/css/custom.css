@@ -1,0 +1,399 @@
+/*body {background: #e3e3e3; font-family: 'SegoeUI' !important;}*/
+button {cursor: pointer;}
+
+::-webkit-input-placeholder {
+    color: #000;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: #000;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    color: #000;
+}
+
+:-ms-input-placeholder {
+    color: #000;
+}
+
+
+/* ESTRUTURA */
+
+/* TOPO */
+/*.header {width: 100%; height: 112px; background: #063d49;}*/
+
+#logotipo {width: 216px; height: 60px; margin: 25px 0 0 0;}
+#box-info-usuario p {font-size: 10px; color: #021c22; text-transform: uppercase; margin: 5px 0 0 0;}
+#box-info-usuario p span {color: #fff;}
+#box-info-usuario a {color: #FF6D38;}
+#box-info-usuario a:hover {color: #fff;}
+
+nav#menu {margin: 30px 0 0 0;}
+nav#menu li {float: left; margin: 0 20px 0 0; padding: 0 5px 2px 5px;}
+nav#menu li:last-child {margin: 0;}
+nav#menu li a {color: #ff761a; font-size: 14px; text-transform: uppercase; text-decoration: none; transition: 0.2s ease-in-out;}
+nav#menu li a:hover {color: #fff; transition: 0.2s ease-in-out;}
+
+nav#menu li:hover {border-bottom: 1px solid #ff761a;}
+
+/* FOOTER */
+/*#footer {width: 100%; height: 272px; margin: 40px 0 0px 0; bottom:0; background: url(../img/bg-rodape.jpg) repeat-x left top; position:relative}*/
+/*#btn-go-topo {top: 0; right: -50px;}*/
+
+/*.info-footer {width: 200px; min-height: 50px; margin: 35px 0 0 0; padding: 45px 0 0 0; text-align: center; display: inline-block;}*/
+/*.info-footer span, address {font-size: 12px; font-style: normal; color: #fff; text-transform: uppercase;}*/
+/*.info-meio {margin: 35px 185px 0;}*/
+
+/*#info-email    {margin-left: 5px; background: url(../img/icone-carta.png) no-repeat center top;}*/
+/*#info-telefone {background: url(../img/icone-telefone.png) no-repeat center top;}*/
+/*#info-endereco {background: url(../img/icone-marcador.png) no-repeat center top;}*/
+/*#formas-pagamento {width: 140px; margin: 0 auto; padding: 45px 0 27px 0; text-align: center; display: table;}*/
+/*#formas-pagamento h1 {margin: 0 0 5px 0; font-size: 12px; text-transform: uppercase; color: #fff; font-weight: normal;}*/
+/*#formas-pagamento figure {float: left; margin: 0 1px;}*/
+
+/*#copyright {margin: 6px 0 0 0; color: #fff; font-size: 11px; text-transform: uppercase;}*/
+
+/* FIM ESTRUTURA 
+
+/* LOGIN */
+
+#box-mensagem-flash {}
+
+#box-login {width: 392px; margin: 40px auto 0 auto;}
+#box-login figure {width: 370px; height: 103px; margin: 0 0 10px 10px;}
+.input-login {width: 92%; height: 30px; margin: 10px 0 0 0; padding: 5px 15px; color: #666; background: #fff; border-radius: 5px; border: 1px inset #f2f2f2; font: italic 15px 'Segoe UI';}
+.btn-login {width: 117px; height: 35px; margin: 10px 0 0 0; font: bold 14px 'Open Sans', sans-serif; color: #FF761A; text-transform: uppercase; background: #fff; border-radius: 3px; border: 1px inset #f2f2f2; cursor: pointer;}
+
+#box-login a {margin: 20px 0 0 0; color: #666; font-style: italic; font-size: 12px; text-decoration: none; display: inline-block;}
+#box-login a:last-child:before {content: '/ ';}
+#box-login a:hover {text-decoration: underline;}
+
+#box-cadastro-cliente {width: 60%; margin: 20px auto; display: none;}
+#box-cadastro-cliente fieldset {border: none;}
+
+/* FIM LOGIN */
+
+/* HOME */
+
+#banner-home {background-image: url(../img/img-banner-home.jpg);}
+#banner-termos-condicoes, #banner-formas-pagamento {background-image: url(../img/img-banner-internas.jpg); }
+
+/* FIM HOME */
+
+/* BUSCAR PASSAGENS */
+
+#box-busca {height: 270px; margin: 0; background: #084653; text-align: left;}
+form#buscar-passagens #box-opcoes {width: 700px;}
+.label {margin: 0 15px 15px 0;}
+.label span {display: block; color: #e3e3e3; font-size: 14px; margin: 0 0 0 10px;}
+
+/* estilização select do plugin select2 */
+.select2-container .select2-selection--single {height: 44px;}
+.select2-container--default .select2-selection--single {border-radius: 0;}
+.select2-container--default .select2-selection--single .select2-selection__rendered {line-height: 44px;}
+.select2-container--default .select2-selection--single .select2-selection__arrow {top: 10px;}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {font-size: 15px; color: #000;}
+li.select2-results__option {font-size: 13px;}
+
+.select2-search__field {}
+.select2-container--open .select2-dropdown {top: -40px;}
+
+.label span.select2, .label span.selection, .label span.select2-selection {width: 325px !important; margin: 0 !important;}
+select#destino_de, select#destino_para {}
+/*input#data_ida, input#data_volta {width: 130px;}*/
+select#adultos, select#criancas {width: 75px;}
+
+
+#box-destinos {margin: 30px 0 20px 0;}
+#box-destinos label {margin: 0 10px 0 5px; color: #e3e3e3; font-size: 14px;}
+
+/*.input_busca, .select_busca {height: 20px; padding: 10px; background-color: #fff; color: #666; font-family: 'SegoeUI';}*/
+/*.select_busca {height: 44px; }*/
+
+form#buscar-passagens #box-companhias {width: 265px; margin: 30px 0 0 5px;}
+#box-companhias h1 {font-size: 15px; font-weight: normal; text-transform: none; margin: 0;}
+/*#label_gol {padding: 0 0 0 13px;}*/
+/*#label_azul {padding: 0;}*/
+/*#radio_azul {margin: 0 0 0 -10px;}*/
+
+#box-companhias label.label {height: 70px; margin: 20px 10px 10px 10px;}
+img#logotipo_azul {margin: 13px 0 0 0;}
+img#logotipo_tam {margin: 15px 0 10px 0;}
+.radio_companhia_aerea {width: 100%;}
+
+/*#btn-buscar-voos {width: 145px; height: 45px; margin: 19px 0 0 0; background-color: #ff761a; border: 1px solid #ff761a; font-size: 14px; color: #fff; text-transform: uppercase; border: none; cursor: pointer; font-family: 'SegoeUI';}*/
+/*#btn-buscar-voos:hover {border: 2px solid #fff; }*/
+
+.datepicker {background-image: url(../img/icone-calendario.jpg); background-repeat: no-repeat; background-position: 95% 10px;}
+
+.ui-datepicker{
+    font-size: 12px !important;
+}
+
+/* RESUMO DO PEDIDO */
+/*#resumo-pedido {background: #d4d4d4; padding: 20px 0 15px 0;}*/
+/*h5#txt-voo-nao-selecionado  {font-size: 14px; font-weight: normal; padding: 0 0 15px 0;}*/
+/*#resumo-pedido h1 {margin: 0; color: #666; font-size: 17px; text-transform: uppercase;}*/
+/*#resumo-pedido a  {font-size: 13px; color: #909090; margin: 20px auto 0; display: inline-block;}*/
+/*#resumo-pedido button {display: inline-block; float: right; margin: 15px 20px 0 0; border: none; background: #fff; padding: 10px 25px; text-transform: uppercase; color: #666; font-size: 12px;}*/
+
+/*#box-voo-ida-resumo {margin-left: 20px;}*/
+#box-voo-ida-resumo, #box-voo-volta-resumo, #btn-opcoes {display: none;}
+
+#btn-opcoes {width: 100%; float: left;}
+
+.box-voo {width: 48%; margin: 25px 0 0 15px; float: left;}
+.box-voo h2 {margin: 5px 10px 10px 0; color: #084653; font-size: 13px; float: left;}
+
+/*.voo {background: #fff; padding: 4px; float: left; display: table}*/
+/*.voo span {display: inline-block; text-align: center; padding: 10px 21px;}*/
+/*.voo small {color: #fff; display: block; line-height: 155%;}*/
+
+/* SELECIONAR VOO */
+
+#box-selecione-voo-ida, #box-selecione-voo-volta {display: none;}
+
+.box-selecione-voo {margin: 10px 0 0 0; padding: 4px; color: #666;}
+.box-selecione-voo hgroup {padding: 0 0 0 25px; background: url(../img/tracejado-titulos.png) no-repeat left 12px; margin: 20px 0 20px 0;}
+.box-selecione-voo h1 {color: #084653; font-size: 20px; text-transform: uppercase; margin: 0;}
+.box-selecione-voo h2 {color: #666; font-size: 14px; text-transform: uppercase; margin: 0;}
+
+.box-info-voo {background: #fff; padding: 5px; margin: 5px 0 0 0; text-align: center;}
+.box-info-voo tbody {width: 100%;}
+.box-info-voo div {}
+
+.selecionar {padding: 38px 17px;}
+.selecionar input {margin: 0 5px 0 0;}
+
+.info-companhia-numero-voo {padding: 22px 20px; text-align: center; min-height: 54px; min-width: 55px;}
+.info-companhia-numero-voo img {display: block; margin: 0 auto; max-width: 55px;}
+small.numero-voo {margin: 10px 0 0 0; display: block;}
+
+.info-horario {width: auto; margin: 6px 0; padding: 17px 0 0 0;}
+/*.info-volta {background: url(../img/icone-voo-volta.png) no-repeat center center !important;}*/
+.info-horario span {text-align: center; display: block;}
+.info-horario small {display: inline-block; width: 100%; text-align: center; margin: 10px 0 0 0;}
+#dataPartidaIda, #dataChegadaIda, #dataPartidaVolta, #dataChegadaVolta {font-size: 11px}
+
+.paradas{}
+.info-paradas {padding: 10px 10px 15px }
+.info-paradas small {display: block; text-align: center;}
+small.numero-paradas {border-radius: 20px; padding: 10px;}
+small.detalhe-paradas {margin:0;}
+.detalhe-paradas a {text-decoration: none; color: #FF761A; font-size: 12px;}
+.detalhe-paradas a:hover {text-decoration: underline;}
+
+.info-valores {}
+span.preco, span.milhas {width: 100%; padding: 31px 0px; float: left; text-align: center;}
+.preco small, .milhas small {width: 100%; margin: 2px 0 0 0; display: block;}
+
+.info-valores span.milhas {/*padding: 6px 0;*/ margin: 2px 0 0 0; width: 100%;}
+
+.preco-busca-aereo { color: #fff; margin: 0; padding: 31px 25px;}
+.preco-busca-aereo small {width: 100%; margin: 2px 0 0 0; display: block; text-align: center;}
+
+.economize {color: #fff; padding: 31px 25px;}
+.economize small {width: 100%; display: block; margin: 2px 0 0 0; text-align: center;}
+
+.trechos {border-top: 1px solid #ccc; width: 99%; padding: 5px; margin: 5px 0 0 0; background: #eee;}
+.trechos h1 {font-size: 13px; color: #FF761A; margin: 5px 0 5px 5px;}
+/*.trecho {display: inline-block;padding: 5px 10px; border: 1px dashed #666; margin: 5px; background: url(../img/seta-trecho.png) no-repeat center center;}*/
+/*span.partida, span.chegada {font-weight: bold;}*/
+.info {display: inline-block; }
+.info-saida   {padding: 0 20px 0 0;}
+.info-chegada {padding: 0 0 0 20px;}
+table.dataTable tbody th, table.dataTable tbody td{padding-bottom: 0; padding-top: 0;}
+.table td.child{text-align: left;}
+.table td.child ul{list-style: none; padding: 0}
+.dtr-title{font-weight: 700;}
+/* FORM ADD CLIENTE - LOGIN */
+#box-cadastro-cliente .input {display: inline-block; margin: 10px;}
+#box-cadastro-cliente .input label {display: block; font-size: 13px; color: #666;}
+
+#box-cadastro-cliente .textarea {width: 91%;}
+
+#box-cadastro-cliente input, #box-cadastro-cliente textarea {padding: 5px 10px; border: 1px inset #f2f2f2; border-radius: 5px; font: italic 13px 'Segoe UI'; color: #666;}
+#box-cadastro-cliente textarea {width: 96%;}
+
+section#conteudo-voos {
+    min-height: 300px;
+}
+
+/* RESUMO DO PEDIDO */
+section#box-conclusao-pedido {width: 100%;}
+#box-conclusao-pedido .modal-header {background: #084653; text-align: center;}
+#box-conclusao-pedido .modal-title {color: #fff; text-transform: uppercase; font-size: 20px; padding: 10px 0;}
+#box-conclusao-pedido button.close {color: #fff; background: #ff761b; border: none; padding: 0 10px; font-size: 30px; position: absolute; right: 15px; top: 22px;}
+
+#box-conclusao-pedido section#termo {display: block; height: 250px; margin: 0 0 5px 0; padding: 10px; border: 1px solid #ccc; background: #f0f0f0; overflow-x: auto;}
+#termo h5 {margin: 0; text-transform: uppercase; color: #084653; font-size: 16px;}
+#termo p  {font-size: 14px;}
+
+
+#box-conclusao-pedido .box-info-voo 	 {background: #f6f6f6;}
+#box-conclusao-pedido .info-companhia-numero-voo {padding: 22px 20px;}
+#box-conclusao-pedido .preco-busca-aereo {padding: 31px 20px;}
+#box-conclusao-pedido .economize 		 {padding: 31px 20px;}
+#box-conclusao-pedido span.milhas 		 {padding: 30px 0;}
+
+input[type=checkbox][name=aceito_termo] {width: 20px; height: 20px; margin: 5px 5px 0 0;}
+#box-conclusao-pedido .submit {display: none;}
+
+/*#step2, #step3 {display: none;}*/
+/*#step3 {text-align: center;}*/
+
+/*#step3, #step4 {display: none;}*/
+/*#step4 {text-align: center;}*/
+
+/*#step2 h3 {text-transform: uppercase; color: #666; font-size: 15px; display: block; float: left; width: 98%; }*/
+/*#step2 .input { margin: 5px 5px 5px 0; float: left;}*/
+/*#step2 .input input[type=text], #step2 .input input[type=email], #step2 .input input[type=date] {padding: 10px 5px 10px 10px; background: #e2e2e2; border: none; font-family: 'SegoeUI'; font-size: 14px;}*/
+/*#step2 textarea {width: 96%; padding: 10px; background: #e2e2e2; border: none; font-family: 'Open Sans', sans-serif; font-size: 14px;}*/
+
+/*#step3 h3 {text-transform: uppercase; color: #666; font-size: 15px; display: block; float: left; width: 98%; }*/
+/*#step3 .input { margin: 5px 5px 5px 0; float: left;}*/
+/*#step3 .input input[type=text], #step3 .input input[type=email], #step3 .input input[type=date] {padding: 10px 5px 10px 10px; background: #e2e2e2; border: none; font-family: 'Open Sans',sans-serif; font-size: 14px;}*/
+/*#step3 textarea {width: 96%; padding: 10px; background: #e2e2e2; border: none; font-family: 'Open Sans',sans-serif; font-size: 14px;}*/
+
+/*#step4 p {font-size: 18px; padding: 10px 0;}*/
+
+input.nome, input.email {width: 205px;}
+input.rg {width: 113px;}
+input.celular {width: 100px;}
+input.data-nascimento {width: 135px;}
+
+
+.step {margin: 0 0 15px 0; padding: 0 0 10px 0; text-align: center; border-bottom: 1px solid #e5e5e5;}
+.step h6 {margin: 0; color: #084653; text-transform: uppercase; font-size: 10px;}
+.step span {color: #fff; background: #ff761b; font-size: 10px; padding: 5px; border-radius: 10px;}
+
+/*.nav-tabs{list-style: none; margin: 0;padding: 0; text-transform: uppercase;color: #fff}*/
+/*.nav-tabs li{float: left; width: 50%;}*/
+/*.nav-tabs li a{display: block; border-top: 3px solid transparent; border-bottom: 3px solid #084653; font-size: 18px; margin: 0; color: #666; text-align: center;padding: 14px 3%; width: 94%;text-decoration: none;}*/
+/*.nav-tabs li:first-child a{border-right: 3px solid transparent;}*/
+/*.nav-tabs li:last-child a{border-left: 3px solid transparent;}*/
+/*.nav-tabs li.active a{border-color: #084653; color: #084653; font-weight: 700; background-color: #fff; border-bottom-color: transparent;}*/
+/*.nav-tabs li.active a:hover{color: #084653;}*/
+/*.nav-tabs li.active a:focus{outline: none;}*/
+
+/* FIM BUSCAR PASSAGENS */
+
+/* CLASSES GENÉRICAS */
+
+.menu-ativo {border-bottom: 1px solid #ff761a;}
+.menu-ativo a {color: #fff !important;}
+
+.dn {display: none;}
+.db {display: block;}
+.fl {float: left;}
+.fr {float: right;}
+.limite	{width: 980px; margin: 0 auto; display: table; position: relative;}
+.banner .limite {min-height: 237px;}
+.semMargin {margin: 0;}
+.semPadding {padding: 0;}
+.relative {position: relative;}
+.absolute {position: absolute;}
+.banner {width: 100%; height: 237px; margin: 0 0 40px 0; background-color: #063d49; background-repeat: no-repeat; background-position: center top; text-align: center;}
+.banner h1 {color: #fff; font-size: 50px; font-weight: bold; text-transform: uppercase; margin: 70px 0 0 0;}
+.banner h2 {color: #fff; font-size: 18px; font-style: italic; font-weight: normal; margin: 0;}
+figure.icone-banner {width: 69px; height: 69px; margin: 0 0 0 -34px; bottom: -35px; left: 50%; z-index: 1; }
+.conteudo {}
+.conteudo p {font-size: 15px; font-style: italic; color: #666; padding: 0 0 5px 0; line-height: 150%}
+
+.titulo {background: url(../img/tracejado-titulos.png) no-repeat left 8px; padding: 0 0 0 20px;}
+.loading-circulo   {padding: 0 15px 0 0; background-image: url(../img/loading-circulo.gif) !important; background-repeat: no-repeat !important; background-position: 94% 12px !important;}
+.loading-tracejado {padding: 0 15px 0 0; background-image: url(../img/loading-tracejado.gif); background-repeat: no-repeat; background-position: center 25px;}
+
+/*label.error {font-size: 11px; color: #DD4B39; margin: 2px 0 0 0; padding: 3px; background: #fff !important; display: block;}*/
+
+.alert {margin: 0 0 20px 0; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-size: 13px; color: #fff;}
+.alert-danger  {background: rgb(195, 81, 81);}
+.alert-success {background: #17a05e;}
+
+/*.bg-laranja    {background: #FF761A !important;}*/
+/*.bg-economizou {background: #599112 !important;}*/
+
+.bg-cinza      {background: #e2e2e2;}
+.bg-cinza small {color: #666 !important;}
+
+.bg-cinza-escuro {background: #d4d4d4 !important;}
+
+/*.bg-azul-claro {background: #084653 !important;}*/
+
+.tab-pane{display: none;}
+.tab-pane.active{display: block;}
+
+.txt_center {text-align: center;}
+/*.error {border-bottom: 1px inset red !important;}*/
+
+.linha {
+    border: 1px solid #ccc;
+    margin: 15px 0 0 0;
+    width: 98%;
+    display: inline-block;
+}
+
+.table-data
+{
+    table-layout: auto;
+    width: 100%;
+    max-width: 2024px;
+    overflow: scroll;
+    padding: 1%;
+}
+
+.table-data tr
+{
+    padding:1%;
+}
+
+.table-data thead
+{
+    background-color: ghostwhite;
+    font-weight: bolder;
+    font-size:16px;
+    text-transform: uppercase;
+    border-bottom: 1px solid black;
+}
+.table-data tbody > tr > td
+{
+    font-size: 15px;
+    color:dimgrey;
+}
+
+.form-control[disabled],
+.form-control[readonly],
+fieldset[disabled] .form-control {
+    background-color: #eee;
+    opacity: 1;
+}
+.form-control[disabled],
+fieldset[disabled] .form-control {
+    cursor: not-allowed;
+}
+textarea.form-control {
+    height: auto;
+}
+input[type="search"] {
+    -webkit-appearance: none;
+}
+
+.btn-xs,
+.btn-group-xs > .btn {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+
+#annexPayment h3 {text-transform: uppercase; color: #666; font-size: 15px; display: block; float: left; width: 98%; }
+#annexPayment input
+{
+    padding: 10px 5px 10px 10px; background: #e2e2e2; border: none; font-family: 'Open Sans', sans-serif; font-size: 14px;
+}
+#annexPayment textarea {width: 96%; padding: 10px; background: #e2e2e2; border: none; font-family: 'Open Sans',sans-serif; font-size: 14px;}
+
+
+/* FIM CLASSES */
