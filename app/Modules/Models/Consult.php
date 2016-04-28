@@ -52,9 +52,27 @@ class Consult extends Model
         /* override your model constructor */
         parent::__construct($attributes);
         $this->client = $client;
-
     }
-
+    /**
+     * @param $cpf
+     * @return bool
+     * Método Valida Tamanho, Confere Primeiro Digito Verificador, Calcula Segundo dígido Verificador
+     */
+    public function validateCpf($cpf)
+    {
+        $cpf = preg_replace('/[^0-9]/', '', (string) $cpf);
+        if (strlen($cpf) != 11)
+            return false;
+        for ($i = 0, $j = 10, $soma = 0; $i < 9; $i++, $j--)
+            $soma += $cpf{$i} * $j;
+        $resto = $soma % 11;
+        if ($cpf{9} != ($resto < 2 ? 0 : 11 - $resto))
+            return false;
+        for ($i = 0, $j = 11, $soma = 0; $i < 10; $i++, $j--)
+            $soma += $cpf{$i} * $j;
+        $resto = $soma % 11;
+        return $cpf{10} == ($resto < 2 ? 0 : 11 - $resto);
+    }
     /**
      * @param $cpf
      * @return string
@@ -63,18 +81,21 @@ class Consult extends Model
      */
     public function formatCpf($cpf)
     {
-        if (strlen($cpf) == 14){
-            return $cpf;
+        if($true = $this->validateCpf($cpf)){
+            if (strlen($cpf) == 14){
+                return $cpf;
+            } else {
+                $partOne     = substr($cpf, 0, 3);
+                $partTwo     = substr($cpf, 3, 3);
+                $partThree   = substr($cpf, 6, 3);
+                $partFour    = substr($cpf, 9, 2);
+                $mountCPF = "$partOne.$partTwo.$partThree-$partFour";
+                return $mountCPF;
+            }
         } else {
-            $partOne     = substr($cpf, 0, 3);
-            $partTwo     = substr($cpf, 3, 3);
-            $partThree   = substr($cpf, 6, 3);
-            $partFour    = substr($cpf, 9, 2);
-            $mountCPF = "$partOne.$partTwo.$partThree-$partFour";
-            return $mountCPF;
+            dd('cpf é invalido');
         }
     }
-    
     /**
      * @param $data Pegar dados se Cpf Existir no banco
      */
