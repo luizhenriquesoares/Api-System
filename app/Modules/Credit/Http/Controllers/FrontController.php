@@ -12,7 +12,6 @@ class FrontController extends Controller
      * @var Consult
      */
     private $consult;
-
     /**
      * FrontController constructor.
      * @param Consult $consult
@@ -27,8 +26,7 @@ class FrontController extends Controller
      */
     public function index($data)
     {
-        $cpf  = $this->consult->formatCpf($data);
-        $data = $this->consult->localizaSimples($cpf);
+        $data = $this->consult->localizaSimples($data);
         return $data;
     }
     /**

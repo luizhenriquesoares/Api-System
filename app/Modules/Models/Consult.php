@@ -204,6 +204,10 @@ class Consult extends Model
     public function localizaSimples($data)
     {
         /**
+         * Método Validar CPF e Formatar no Padrão xxx.xxx.xxx-xx
+         */
+        $data      = $this->formatCpf($data);
+        /**
          * Método getMonths verifica se cadastro existe a de menos 6 meses
          * Método newConsultSimplesAssertiva e newConsultSimplesCRM
          * Retorna uma consulta do BD
