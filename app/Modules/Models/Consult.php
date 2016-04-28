@@ -61,7 +61,7 @@ class Consult extends Model
     {
         $earliestdate = DB::table('test_consult')
             ->select('*')
-            ->where(['cpf' => $data])->get();
+            ->where(['cpf' => $data])->first();
         return $earliestdate;
     }
     /**
@@ -71,14 +71,14 @@ class Consult extends Model
      */
     public function saveOrUpdate($data, $result)
     {
-        if($this->getCpf($data)) {
-            $this->destroy($result->name);
-            $result = (array) $result;
-            $this->create($result);
-        } else {
-            $result = (array) $result;
-            $this->create($result);
-        }
+        if($consult = $this->getCpf($data)) {
+                $this->destroy($consult->id);
+                $result = (array) $result;
+                $this->create($result);
+            } else {
+                $result = (array) $result;
+                $this->create($result);
+            }
     }
     /**
      * @param $data
