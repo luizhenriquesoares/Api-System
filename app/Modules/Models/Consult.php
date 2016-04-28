@@ -66,7 +66,7 @@ class Consult extends Model
     }
     /**
      * @param $data
-     * @return \Closure
+     * @return $result
      * Salva ou Atualiza os dados da consulta no Banco de Dados
      */
     public function saveOrUpdate($data, $result)
