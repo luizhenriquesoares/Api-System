@@ -4,7 +4,11 @@
  * User: Luiz Henrique Soares
  * Date: 24/04/2016
 <<<<<<< HEAD
+<<<<<<< HEAD
  * Time: 15:12
+=======
+ * Time: 15:11
+>>>>>>> refatoração
 =======
  * Time: 15:11
 >>>>>>> refatoração
@@ -30,7 +34,10 @@ class CRMController extends Controller implements ApiInterface
      * Faz uma consulta no banco de dados do CRM e retorna
      * dados do cliente
      */
+<<<<<<< HEAD
 
+=======
+>>>>>>> refatoração
     public function newConsultSimple($data)
     {
         $result = DB::table('elomilhas.providers')

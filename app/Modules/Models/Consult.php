@@ -1,7 +1,10 @@
 <?php
 namespace App\Modules\Models;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> refatoração
 use App\Modules\Credit\Http\Controllers\ApiCredit\Types\AssertivaController;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -230,5 +233,8 @@ class Consult extends Model
                 return response()->json($assertiva);
             }
        }
+<<<<<<< HEAD
     
+=======
+>>>>>>> refatoração
 }

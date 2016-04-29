@@ -7,7 +7,10 @@
  */
 namespace App\Modules\Test\Credit\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Modules\Models\TestConsult;
+=======
+>>>>>>> refatoração
 
 class FrontController extends Controller
 {
@@ -22,6 +25,7 @@ class FrontController extends Controller
 
     public function index($cpf)
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         $cpf = TestConsult::where('cpf', '=', $cpf);
 
@@ -55,6 +59,9 @@ class FrontController extends Controller
 =======
         dd($cpf);
 >>>>>>> funcionalidade
+=======
+        dd($cpf);
+>>>>>>> refatoração
     }
 }
 
