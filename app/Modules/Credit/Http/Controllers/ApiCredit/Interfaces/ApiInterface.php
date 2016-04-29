@@ -17,12 +17,7 @@ interface ApiInterface
      * @param $data
      * @return mixed
      */
-<<<<<<< HEAD
-    public  function newConsultSimple($data);
-=======
     public function newConsultSimple($data);
->>>>>>> refatoração
-
     /**
      * @param $data
      * @return mixed
