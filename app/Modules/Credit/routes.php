@@ -7,8 +7,8 @@ Route::group([
     'namespace' => 'App\Modules\Credit\Http\Controllers'],
     function ()
     {
-        Route::get('/json/localiza/{cpf}',                              ['uses' => 'FrontController@index']);
-        Route::post('/json/localiza/{cpf}',                             ['uses' => 'FrontController@store']);
+        Route::get('/json/localiza/{cpf}',                              ['uses' => 'ApiController@index']);
+        Route::post('/json/localiza/{cpf}',                             ['uses' => 'ApiController@store']);
     });
 
 

@@ -6,7 +6,7 @@ use App\Modules\Models\Consult;
 use Illuminate\Http\Request;
 
 
-class FrontController extends Controller
+class ApiController extends Controller
 {
     /**
      * @var Consult

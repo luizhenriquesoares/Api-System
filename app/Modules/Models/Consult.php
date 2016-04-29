@@ -13,34 +13,8 @@ class Consult extends Model
 {
     protected $table = 'test_consult';
 
-    protected $fillable = [
-        'cpf',
-        'name',
-        'data',
-        'signo',
-        'sexo',
-        'mae',
-        'rg',
-        'telFixo1',
-        'telFixo2',
-        'telFixo3',
-        'telFixo4',
-        'logradouro',
-        'complemento',
-        'bairro',
-        'cidade',
-        'uf',
-        'cep',
-        'email1',
-        'email2',
-        'email3',
-        'email4',
-        'profissao',
-        'empresa',
-        'renda',
-        'created_at',
-        'updated_at'
-    ];
+    protected $fillable = ['cpf', 'name', 'data', 'signo', 'sexo', 'mae', 'rg', 'telFixo1', 'telFixo2', 'telFixo3', 'telFixo4', 'logradouro', 'complemento', 'bairro', 'cidade', 'uf', 'cep', 'email1', 'email2', 'email3', 'email4', 'profissao', 'empresa', 'renda', 'created_at', 'updated_at' ];
+
     protected $client;
     /**
      * Consult constructor.
@@ -165,7 +139,6 @@ class Consult extends Model
 
         if(empty($CRM->name)){
         }
-
         if($CRM->cpf          != $Assertiva->cpf) {
             $cpf               = $Assertiva->cpf . ": 'Uma inconsistência no cpf foi encontrada'";
         } else {
@@ -229,4 +202,5 @@ class Consult extends Model
                 return response()->json($assertiva);
             }
        }
+    
 }
