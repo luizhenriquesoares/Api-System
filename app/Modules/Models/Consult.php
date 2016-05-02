@@ -180,7 +180,7 @@ class Consult extends Model
          */
         $data = $this->formatCpf($data);
         /**
-         * Método getMonths verifica se cadastro existe a de menos 6 meses
+         * Método getMonths     verifica se cadastro existe a de menos 6 meses
          * Método newConsultSimplesAssertiva e newConsultSimplesCRM
          * Retorna uma consulta do BD
          * Método crossingData Retorna os dados validados com regra de
