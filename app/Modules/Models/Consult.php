@@ -22,7 +22,7 @@ class Consult extends Model
      */
     public function __construct(array $attributes = array(), AssertivaController $client = null)
     {
-        /* override your model constructor */
+        // override your model constructor 
         parent::__construct($attributes);
         $this->client = $client;
     }

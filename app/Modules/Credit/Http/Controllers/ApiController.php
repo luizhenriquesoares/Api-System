@@ -32,14 +32,5 @@ class ApiController extends Controller
         $data = $this->consult->localizaSimples($data);
         return $data;
     }
-    /**
-     * @param Request $request
-     * @return mixed
-     */
-    public function store(Request $request)
-    {
-        $data = Consult::create($request->all());
 
-        return response()->json(['result' => false]);
-    }
 }
