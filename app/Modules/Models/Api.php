@@ -7,6 +7,7 @@
  */
 namespace App\Modules\Models;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class Api
@@ -26,9 +27,13 @@ class Api extends Model
      */
     public function getApi()
     {
-        $data = Api::where('status', '=', '1')->first();
+        $data  = DB::table('api_credit')
+            ->select('*')
+            ->where('status', '=', '1')
+            ->first();
+        if($data) {
+            return $data;
+        }
     }
     
-    
-
 }

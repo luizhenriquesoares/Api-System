@@ -9,7 +9,7 @@
 namespace App\Modules\Credit\Http\Controllers\ApiCredit\Types;
 
 use App\Modules\Credit\Http\Controllers\ApiCredit\Interfaces\ApiInterface;
-use App\Modules\Credit\Http\Controllers\ApiCredit\Traits\AssertivaTrait;
+use App\Modules\Credit\Http\Controllers\ApiCredit\Traits\ApiTrait;
 use App\Modules\Test\Credit\Http\Controllers\Controller;
 
 /**
@@ -17,7 +17,7 @@ use App\Modules\Test\Credit\Http\Controllers\Controller;
  */
 class AssertivaController extends Controller implements ApiInterface
 {
-    use AssertivaTrait;
+    use ApiTrait;
     /**
      * @param $data
      * @return mixed
@@ -25,7 +25,7 @@ class AssertivaController extends Controller implements ApiInterface
      */
     public function newConsultSimple($data)
     {
-        $result = new \stdClass();
+       /* $result = new \stdClass();
         $result->cpf  = "101.808.704-40";
         $result->name = "Luiz Henrique Soares";
         $result->data = '23/03/1991';
@@ -53,11 +53,11 @@ class AssertivaController extends Controller implements ApiInterface
         $result->created_at = date("Y-m-d H:i:s");
         $result->updated_at = date("Y-m-d H:i:s");
 
-        return $result;
+        return $result;*/
 
-        /*$Assertiva = $this->getAssertiva($data);
+        $Assertiva = $this->getRequest($data);
         $itemAssertiva = json_decode($Assertiva);
-        return $itemAssertiva;*/
+        return $itemAssertiva;
     }
     /**
      * @param $Assertiva

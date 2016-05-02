@@ -202,5 +202,4 @@ class Consult extends Model
                 return response()->json($assertiva);
             }
        }
-    
 }
