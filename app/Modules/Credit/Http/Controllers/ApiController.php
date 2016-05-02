@@ -5,7 +5,10 @@ namespace App\Modules\Credit\Http\Controllers;
 use App\Modules\Models\Consult;
 use Illuminate\Http\Request;
 
-
+/**
+ * Class ApiController
+ * @package App\Modules\Credit\Http\Controllers
+ */
 class ApiController extends Controller
 {
     /**

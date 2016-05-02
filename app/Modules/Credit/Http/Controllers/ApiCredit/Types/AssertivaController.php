@@ -14,6 +14,7 @@ use App\Modules\Test\Credit\Http\Controllers\Controller;
 
 /**
  * Class AssertivaController
+ * @package App\Modules\Credit\Http\Controllers\ApiCredit\Types
  */
 class AssertivaController extends Controller implements ApiInterface
 {

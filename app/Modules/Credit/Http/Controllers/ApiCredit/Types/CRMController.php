@@ -14,8 +14,8 @@ use App\Modules\CRM\Modules\CRM\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
 /**
- * @method CRMTrait getCRM($data)
- * @method CRMTrait PostCRM($data)
+ * Class CRMController
+ * @package App\Modules\Credit\Http\Controllers\ApiCredit\Types
  */
 class CRMController extends Controller implements ApiInterface
 {

@@ -37,7 +37,7 @@ trait ApiTrait
         $api = $this->api->getApi();
 
         try {
-            $response = $this->client->request('GET', $api->url . '&documento=' . $data)->getBody();
+            $response = $this->client->request('POST', $api->url . '&documento=' . $data)->getBody();
             return $response;
         } catch (\Exception $e) {
             echo 'Exceção capturada: ', $e->getMessage(), "\n";
