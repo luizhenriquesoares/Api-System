@@ -12,7 +12,7 @@ use App\Modules\Credit\Http\Controllers\ApiCredit\Contracts\ApiAbstract;
 use App\Modules\Credit\Http\Controllers\ApiCredit\Interfaces\ApiInterface;
 
 /**
- * Class AssertivaController
+ * Class Assertiva
  * @package App\Modules\Credit\Http\Controllers\ApiCredit\Types
  */
 class Assertiva extends ApiAbstract implements ApiInterface

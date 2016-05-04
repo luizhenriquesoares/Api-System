@@ -16,9 +16,11 @@ class Consult extends Model
     protected $fillable = ['cpf', 'name', 'data', 'signo', 'sexo', 'mae', 'rg', 'telFixo1', 'telFixo2', 'telFixo3', 'telFixo4', 'logradouro', 'complemento', 'bairro', 'cidade', 'uf', 'cep', 'email1', 'email2', 'email3', 'email4', 'profissao', 'empresa', 'renda', 'created_at', 'updated_at' ];
 
     protected $client;
+
     /**
      * Consult constructor.
-     * @param Assertiva $client
+     * @param array $attributes
+     * @param Assertiva|null $client
      */
     public function __construct(array $attributes = array(), Assertiva $client = null)
     {
@@ -63,7 +65,6 @@ class Consult extends Model
                 $partThree   = substr($cpf, 6, 3);
                 $partFour    = substr($cpf, 9, 2);
                 $mountCPF = "$partOne.$partTwo.$partThree-$partFour";
-
                 return $mountCPF;
             }
         } else {
@@ -170,7 +171,7 @@ class Consult extends Model
          */
         $data = $this->formatCpf($data);
         /**
-         * Método getMonths     verifica se cadastro existe a de menos 6 meses
+         * Método getMonths verifica se cadastro existe a de menos 6 meses
          * Método newConsultSimplesAssertiva e newConsultSimplesCRM
          * Retorna uma consulta do BD
          * Método crossingData Retorna os dados validados com regra de

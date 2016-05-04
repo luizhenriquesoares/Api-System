@@ -11,7 +11,7 @@ use App\Modules\Credit\Http\Controllers\ApiCredit\Interfaces\ApiInterface;
 use Illuminate\Support\Facades\DB;
 
 /**
- * Class CRMController
+ * Class CRM
  * @package App\Modules\Credit\Http\Controllers\ApiCredit\Types
  */
 class CRM implements ApiInterface

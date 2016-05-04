@@ -11,16 +11,22 @@ use GuzzleHttp\Client;
 
 /**
  * Class ApiAbstract
- * @package App\Modules\Credit\Http\Controllers\ApiCredit\Traits
+ * @package App\Modules\Credit\Http\Controllers\ApiCredit\Contracts
  */
 abstract class ApiAbstract
 {
+    /**
+     * @var Api
+     */
     protected $api;
-
+    /**
+     * @var Client
+     */
     protected $client;
     /**
-     * AssertivaTrait constructor.
+     * ApiAbstract constructor.
      * @param Client $client
+     * @param Api $api
      */
     public function __construct(Client $client, Api $api)
     {
@@ -56,7 +62,6 @@ abstract class ApiAbstract
         } catch (\Exception $e) {
             echo 'Exceção capturada: ', $e->getMessage(), "\n";
         }
-
     }
 
 }
