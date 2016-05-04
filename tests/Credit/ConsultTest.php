@@ -10,6 +10,7 @@ use App\Modules\Models\Consult;
 
 class ConsultTest extends \PHPUnit_Framework_TestCase
 {
+
     /**
      * @test
      */
@@ -33,24 +34,41 @@ class ConsultTest extends \PHPUnit_Framework_TestCase
      */
     public function verificaMetodoLocalizaSimples()
     {
-        $formatCpf = $this->getMockBuilder(Consult::class)
-            ->getMock();
-        $formatCpf->method('formatCpf')
-            ->willReturn('101.808.704-40');
-        
-        $getConsultDB = $this->getMockBuilder(Consult::class)
-            ->getMock();
-        $getConsultDB->method('getConsultDB')
-            ->willReturn('101.808.704-40');
+            $mock = $this->getMockBuilder('Consult')
+                         ->setMethods(['getMonths'])
+                         ->getMock();
 
-        $getMonths = $this->getMockBuilder(Consult::class)
+            $mock->method('getMonths')
+                 ->willReturn(true);
+
+            $this->assertEquals(true, $mock->getMonths());
+    }
+    /**
+     * @test
+     */
+    public function verificaSeMetodoPegarCpfRetornaTrue()
+    {
+        $mock = $this->getMockBuilder('Consult')
+                     ->setMethods(['getCpf'])
+                     ->getMock();
+        $mock->method('getCpf')
+             ->willReturn(true);
+        
+        $consult = new Consult();
+        $this->assertEquals($mock->getCpf(), $consult->getCpf('101.808.704-40'));
+    }
+    /**
+     * @test
+     */
+    public function verificaSeforMaiorQue6MesesFazUmaNovaConsulta()
+    {
+        $mock = $this->getMockBuilder('Consult')
+            ->setMethods(['getMonths'])
             ->getMock();
-        $getMonths->method('getMonths')
-            ->willReturn('101.808.704-40');
+        $mock->method('getMonths')
+            ->willReturn(true);
 
         $consult = new Consult();
-
-       // $this->assertEquals(true,$consult->localizaSimples('101.808.704-40'));
-
+        $this->assertEquals($mock->getMonths(), $consult->getMonths('101.808.704-40'));
     }
 }

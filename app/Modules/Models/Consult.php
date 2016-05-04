@@ -71,14 +71,19 @@ class Consult extends Model
         }
     }
     /**
-     * @param $data Pegar dados se Cpf Existir no banco
+     * @param $data
+     * @return mixed
+     * Pegar consulta se CPF existe na base dados
      */
     public function getCpf($data)
     {
         $earliestdate = DB::table('test_consult')
             ->select('*')
             ->where(['cpf' => $data])->first();
-        return $earliestdate;
+        if($earliestdate) {
+            $data = (object) $earliestdate;
+            return $data;
+        }
     }
     /**
      * @param $data
@@ -107,24 +112,9 @@ class Consult extends Model
             ->select('*')
             ->where('cpf', '=', $data)
             ->having('updated_at', '>=' , new \DateTime('-6 months'))
-            ->get();
+            ->first();
         if($mostDate) {
             return $mostDate;
-        }
-    }
-    /**
-     * @param $data
-     * @return mixed
-     * Pegar consulta se CPF existe na base dados
-     */
-    public function getConsultDB($data)
-    {
-        $earliestdate = DB::table('test_consult')
-            ->select('*')
-            ->where(['cpf' => $data])->first();
-        if($earliestdate) {
-            $data = (object) $earliestdate;
-            return $data;
         }
     }
     /**
@@ -187,7 +177,7 @@ class Consult extends Model
          * cruzamento dos dados
          */
         if ($this->getMonths($data)) {
-            $consult = $this->getConsultDB($data);
+            $consult = $this->getCpf($data);
             return response()->json($consult);
         } else {
                 /**
