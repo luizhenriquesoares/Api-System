@@ -8,17 +8,14 @@
 namespace App\Modules\Credit\Http\Controllers\ApiCredit\Types;
 
 use App\Modules\Credit\Http\Controllers\ApiCredit\Interfaces\ApiInterface;
-use App\Modules\Credit\Http\Controllers\ApiCredit\Traits\ApiTrait;
-use App\Modules\CRM\Modules\CRM\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
 /**
  * Class CRMController
  * @package App\Modules\Credit\Http\Controllers\ApiCredit\Types
  */
-class CRMController extends Controller implements ApiInterface
+class CRM implements ApiInterface
 {
-   use ApiTrait;
     /**
      * @param $data
      * @return mixed

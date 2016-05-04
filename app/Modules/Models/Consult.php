@@ -1,7 +1,7 @@
 <?php
 namespace App\Modules\Models;
 
-use App\Modules\Credit\Http\Controllers\ApiCredit\Types\AssertivaController;
+use App\Modules\Credit\Http\Controllers\ApiCredit\Types\Assertiva;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
@@ -18,9 +18,9 @@ class Consult extends Model
     protected $client;
     /**
      * Consult constructor.
-     * @param AssertivaController $client
+     * @param Assertiva $client
      */
-    public function __construct(array $attributes = array(), AssertivaController $client = null)
+    public function __construct(array $attributes = array(), Assertiva $client = null)
     {
         // override your model constructor 
         parent::__construct($attributes);

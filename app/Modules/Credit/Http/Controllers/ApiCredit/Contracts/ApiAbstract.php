@@ -2,22 +2,21 @@
 /**
  * Created by PhpStorm.
  * User: Luiz Henrique Soares
- * Date: 24/04/2016
- * Time: 18:45
+ * Date: 04/05/16
+ * Time: 12:13
  */
-namespace App\Modules\Credit\Http\Controllers\ApiCredit\Traits;
-
+namespace App\Modules\Credit\Http\Controllers\ApiCredit\Contracts;
 use App\Modules\Models\Api;
 use GuzzleHttp\Client;
 
 /**
- * Class AssertivaTrait
+ * Class ApiAbstract
  * @package App\Modules\Credit\Http\Controllers\ApiCredit\Traits
  */
-trait ApiTrait
+abstract class ApiAbstract
 {
     protected $api;
-    
+
     protected $client;
     /**
      * AssertivaTrait constructor.
@@ -32,7 +31,7 @@ trait ApiTrait
      * @param $data
      * @return \Psr\Http\Message\StreamInterface
      */
-     public function postRequest($data)
+    public function postRequest($data)
     {
         $api = $this->api->getApi();
 
@@ -59,4 +58,5 @@ trait ApiTrait
         }
 
     }
+
 }

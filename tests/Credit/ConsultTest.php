@@ -10,7 +10,6 @@ use App\Modules\Models\Consult;
 
 class ConsultTest extends \PHPUnit_Framework_TestCase
 {
-
     /**
      * @test
      */
@@ -25,7 +24,7 @@ class ConsultTest extends \PHPUnit_Framework_TestCase
      */
     public function verificaSeCpfEhFormatado()
     {
-        $consult = new Consult();
+        $consult = new Consult(); 
         $cpf     = $consult->formatCpf('10180870440');
         $this->assertEquals('101.808.704-40', $cpf);
     }
