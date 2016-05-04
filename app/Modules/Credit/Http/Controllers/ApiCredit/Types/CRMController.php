@@ -5,11 +5,10 @@
  * Date: 24/04/2016
  * Time: 15:11
  */
-
 namespace App\Modules\Credit\Http\Controllers\ApiCredit\Types;
 
 use App\Modules\Credit\Http\Controllers\ApiCredit\Interfaces\ApiInterface;
-use App\Modules\Credit\Http\Controllers\ApiCredit\Traits\CRMTrait;
+use App\Modules\Credit\Http\Controllers\ApiCredit\Traits\ApiTrait;
 use App\Modules\CRM\Modules\CRM\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
@@ -19,7 +18,7 @@ use Illuminate\Support\Facades\DB;
  */
 class CRMController extends Controller implements ApiInterface
 {
-    use CRMTrait;
+   use ApiTrait;
     /**
      * @param $data
      * @return mixed

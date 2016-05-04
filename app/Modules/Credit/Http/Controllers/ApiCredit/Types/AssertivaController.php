@@ -10,7 +10,7 @@ namespace App\Modules\Credit\Http\Controllers\ApiCredit\Types;
 
 use App\Modules\Credit\Http\Controllers\ApiCredit\Interfaces\ApiInterface;
 use App\Modules\Credit\Http\Controllers\ApiCredit\Traits\ApiTrait;
-use App\Modules\Test\Credit\Http\Controllers\Controller;
+use App\Modules\Credit\Http\Controllers\Controller;
 
 /**
  * Class AssertivaController

@@ -3,7 +3,6 @@
 namespace App\Modules\Credit\Http\Controllers;
     
 use App\Modules\Models\Consult;
-use Illuminate\Http\Request;
 
 /**
  * Class ApiController

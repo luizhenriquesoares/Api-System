@@ -28,7 +28,6 @@ class ConsultTest extends \PHPUnit_Framework_TestCase
         $cpf     = $consult->formatCpf('10180870440');
         $this->assertEquals('101.808.704-40', $cpf);
     }
-   
     /**
      * @test
      */
