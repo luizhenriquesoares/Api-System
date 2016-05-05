@@ -17,10 +17,10 @@ use Illuminate\Support\Facades\DB;
 class CRM implements ApiInterface
 {
     /**
+     * Faz uma consulta no banco de dados do CRM e retorna dados do cliente
+     *
      * @param $data
      * @return mixed
-     * Faz uma consulta no banco de dados do CRM e retorna
-     * dados do cliente
      */
     public function newConsultSimple($data)
     {
@@ -32,10 +32,12 @@ class CRM implements ApiInterface
             dd($result);
         }
     }
+    
     /**
+     * Método que retorna o tratamento dos dados, envia para o processamento de validação
+     * 
      * @param $CRM
      * @return mixed
-     * Método que retorna o tratamento dos dados, envia para o processamento de validação
      */
     public function dataProcessing($CRM)
     {

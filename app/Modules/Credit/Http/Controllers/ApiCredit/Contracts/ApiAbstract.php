@@ -19,10 +19,12 @@ abstract class ApiAbstract
      * @var Api
      */
     protected $api;
+
     /**
      * @var Client
      */
     protected $client;
+
     /**
      * ApiAbstract constructor.
      * 
@@ -34,6 +36,7 @@ abstract class ApiAbstract
         $this->client = $client;
         $this->api    = $api;
     }
+
     /**
      * Método faz uma Request por Post na API
      * 
@@ -50,6 +53,7 @@ abstract class ApiAbstract
             echo 'Exceção capturada: ', $e->getMessage(), "\n";
         }
     }
+
     /**
      * Método faz uma Request por GET na API
      * 

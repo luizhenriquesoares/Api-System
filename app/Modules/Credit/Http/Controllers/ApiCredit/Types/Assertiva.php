@@ -9,8 +9,6 @@ namespace App\Modules\Credit\Http\Controllers\ApiCredit\Types;
 
 use App\Modules\Credit\Http\Controllers\ApiCredit\Contracts\ApiAbstract;
 use App\Modules\Credit\Http\Controllers\ApiCredit\Interfaces\ApiInterface;
-
-
 /**
  * Class Assertiva
  * @package App\Modules\Credit\Http\Controllers\ApiCredit\Types
@@ -59,6 +57,7 @@ class Assertiva extends ApiAbstract implements ApiInterface
         $itemAssertiva = json_decode($Assertiva);
         return $itemAssertiva;*/
     }
+    
     /**
      * Método que retorna o tratamento dos dados, envia para o processamento de validação
      * 

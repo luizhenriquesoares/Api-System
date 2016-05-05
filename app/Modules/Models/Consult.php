@@ -17,6 +17,7 @@ class Consult extends Model
      * @var string
      */
     protected $table = 'test_consult';
+    
     /**
      * Fillable temporário, está configurada para testes
      *
@@ -37,6 +38,7 @@ class Consult extends Model
         parent::__construct($attributes);
         $this->client = $client;
     }
+    
     /**
      * Método Valida Tamanho, Confere Primeiro Digito Verificador, Calcula Segundo dígido Verificador
      *
@@ -83,6 +85,7 @@ class Consult extends Model
             dd('cpf é invalido');
         }
     }
+    
     /**
      * Pegar consulta se CPF existe na base dados
      *
@@ -98,6 +101,7 @@ class Consult extends Model
             return $earliestdate;
         }
     }
+    
     /**
      * Salva ou Atualiza os dados da consulta no Banco de Dados
      *
@@ -133,7 +137,7 @@ class Consult extends Model
             return $mostDate;
         }
     }
-
+    
     /**
      * Consult Método que retorna o Cruzamento das Informaçoes
      *
@@ -176,6 +180,7 @@ class Consult extends Model
 
         return $result;
     }
+    
     /**
      * Métodos retorna dados processados Consulta Simples
      *
