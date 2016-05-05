@@ -21,9 +21,11 @@ class Api extends Model
     protected $table = 'api_credit';
 
     protected $fillable = ['name','url','company','user','password'];
+
     /**
-     * @return retorna tabela de configuração da APICredit 
-     * Se Status For ativado = 1
+     * retorna tabela de configuração da APICredit Se Status For ativado = 1
+     *
+     * @return mixed
      */
     public function getApi()
     {
@@ -35,5 +37,4 @@ class Api extends Model
             return $data;
         }
     }
-    
 }

@@ -15,6 +15,8 @@ class ApiController extends Controller
      */
     private $consult;
     /**
+     * Injeção de dependência com Modelo Consult, Construtor inicializa var $consult
+     * 
      * FrontController constructor.
      * @param Consult $consult
      */
@@ -23,6 +25,8 @@ class ApiController extends Controller
         $this->consult = $consult;
     }
     /**
+     * Action Index , chama método localiza Simples do Modelo Consult e retorna Json
+     * 
      * @param $data
      * @return mixed
      */

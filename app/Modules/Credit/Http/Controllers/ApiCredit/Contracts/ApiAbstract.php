@@ -25,6 +25,7 @@ abstract class ApiAbstract
     protected $client;
     /**
      * ApiAbstract constructor.
+     * 
      * @param Client $client
      * @param Api $api
      */
@@ -34,13 +35,14 @@ abstract class ApiAbstract
         $this->api    = $api;
     }
     /**
+     * Método faz uma Request por Post na API
+     * 
      * @param $data
      * @return \Psr\Http\Message\StreamInterface
      */
     public function postRequest($data)
     {
         $api = $this->api->getApi();
-
         try {
             $response = $this->client->request('POST', $api->url . '&documento=' . $data)->getBody();
             return $response;
@@ -49,13 +51,14 @@ abstract class ApiAbstract
         }
     }
     /**
+     * Método faz uma Request por GET na API
+     * 
      * @param $data
      * @return \Psr\Http\Message\StreamInterface
      */
     public function getRequest($data)
     {
         $api = $this->api->getApi();
-
         try {
             $response = $this->client->request('GET', $api->url . '&documento=' . $data)->getBody();
             return $response;
@@ -63,5 +66,4 @@ abstract class ApiAbstract
             echo 'Exceção capturada: ', $e->getMessage(), "\n";
         }
     }
-
 }

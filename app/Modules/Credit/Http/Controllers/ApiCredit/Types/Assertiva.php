@@ -5,7 +5,6 @@
  * Date: 24/04/2016
  * Time: 15:08
  */
-
 namespace App\Modules\Credit\Http\Controllers\ApiCredit\Types;
 
 use App\Modules\Credit\Http\Controllers\ApiCredit\Contracts\ApiAbstract;
@@ -19,9 +18,10 @@ use App\Modules\Credit\Http\Controllers\ApiCredit\Interfaces\ApiInterface;
 class Assertiva extends ApiAbstract implements ApiInterface
 {
     /**
+     * Fazer uma nova consulta na api Assertiva e retorna json
+     * 
      * @param $data
      * @return mixed
-     * Fazer uma nova consulta na api Assertiva e retorna json
      */
     public function newConsultSimple($data)
     {
@@ -60,9 +60,10 @@ class Assertiva extends ApiAbstract implements ApiInterface
         return $itemAssertiva;*/
     }
     /**
+     * Método que retorna o tratamento dos dados, envia para o processamento de validação
+     * 
      * @param $Assertiva
      * @return mixed
-     * Método que retorna o tratamento dos dados, envia para o processamento de validação
      */
     public function dataProcessing($Assertiva)
     {
