@@ -82,8 +82,7 @@ class Consult extends Model
             ->select('*')
             ->where(['cpf' => $data])->first();
         if($earliestdate) {
-            $data = (object) $earliestdate;
-            return $data;
+            return $earliestdate;
         }
     }
     /**
@@ -150,7 +149,6 @@ class Consult extends Model
         } else {
             $profissao         = $Assertiva->profissao;
         }
-
         $result = new \stdClass();
         $result->cpf            = $cpf;
         $result->name           = $name;
@@ -193,4 +191,5 @@ class Consult extends Model
                 return response()->json($assertiva);
             }
        }
+    
 }

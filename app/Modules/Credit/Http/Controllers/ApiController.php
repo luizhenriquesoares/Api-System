@@ -31,5 +31,6 @@ class ApiController extends Controller
         $data = $this->consult->localizaSimples($data);
         return $data;
     }
-
+    
 }
+
